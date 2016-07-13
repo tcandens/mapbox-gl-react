@@ -16,23 +16,25 @@ export default class Map extends Component {
       accessToken,
       style,
       sources,
-      pitch,
       layers,
-      actions,
+      eventHandlers,
       center,
       zoom,
+      options,
       bearing,
-      maxBounds,
+      pitch,
     } = this.props;
 
     Mapbox.accessToken = accessToken;
 
     const map = this.map = new Mapbox.Map({
       container: this.mapContainer,
-      zoom,
-      pitch,
-      center,
       style,
+      center,
+      zoom,
+      bearing,
+      pitch,
+      options,
     });
 
     Object.keys(sources).forEach(name => {
@@ -52,9 +54,9 @@ export default class Map extends Component {
       }
     });
 
-    Object.keys(actions).forEach(event => {
+    Object.keys(eventHandlers).forEach(event => {
       map.on(event, (data) => {
-        actions[event](map, data);
+        eventHandlers[event](map, data);
       });
     });
   }
@@ -135,7 +137,7 @@ export default class Map extends Component {
   render = () => {
     return (
       <div
-        style={this.props.containerStyle || {}}
+        style={this.props.containerStyle}
         ref={c => { this.mapContainer = c; }}
         className="mapbox-gl-container"
       >
@@ -143,10 +145,14 @@ export default class Map extends Component {
     );
   };
 }
+
 Map.defaultProps = {
   sources: {},
   layers: [],
-  actions: {},
+  eventHandlers: {},
+  bearing: 0,
+  pitch: 0,
+  containerStyle: {},
 };
 Map.propTypes = {
   accessToken: PropTypes.string.isRequired,
@@ -154,15 +160,27 @@ Map.propTypes = {
   center: PropTypes.arrayOf(PropTypes.number).isRequired,
   children: PropTypes.node,
   containerStyle: PropTypes.object,
-  zoom: PropTypes.number,
+  zoom: PropTypes.number.isRequired,
+  bearing: PropTypes.number,
   pitch: PropTypes.number,
-  minZoom: PropTypes.number,
-  maxBounds: PropTypes.arrayOf(PropTypes.array),
-  loader: PropTypes.element,
+  options: PropTypes.shape({
+    minZoom: PropTypes.number,
+    maxZoom: PropTypes.number,
+    maxBounds: PropTypes.arrayOf(PropTypes.array),
+    hash: PropTypes.boolean,
+    interactive: PropTypes.boolean,
+  }),
   sources: PropTypes.object,
   layers: PropTypes.arrayOf(PropTypes.object),
-  actions: PropTypes.shape({
-    load: PropTypes.func,
+  eventHandlers: PropTypes.shape({
+    movestart: PropTypes.func,
+    mousedown: PropTypes.func,
     moveend: PropTypes.func,
+    move: PropTypes.func,
+    mouseup: PropTypes.func,
+    load: PropTypes.func,
+    mouseout: PropTypes.func,
+    click: PropTypes.func,
+    dblclick: PropTypes.func,
   }),
 };

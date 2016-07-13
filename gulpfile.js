@@ -16,7 +16,6 @@ gulp.task('examples', () => {
       './examples/index.jsx',
     ],
   });
-
   new WebpackDevServer(webpack(config), {
     publicPath: '/__build__/',
     contentBase: './examples',
@@ -29,7 +28,7 @@ gulp.task('examples', () => {
   });
 });
 
-gulp.task('test', function (done) {
+gulp.task('test', (done) => {
   new Karma.Server({
     configFile: path.join(__dirname, 'karma.conf.js'),
     autoWatch: false,
@@ -39,7 +38,7 @@ gulp.task('test', function (done) {
   }).start();
 });
 
-gulp.task('tdd', function (done) {
+gulp.task('tdd', (done) => {
   new Karma.Server({
     configFile: path.join(__dirname, 'karma.conf.js'),
   }, done).start();
