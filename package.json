@@ -2,13 +2,25 @@
   "name": "mapbox-gl-react",
   "version": "0.0.1",
   "description": "React components for Mapbox-gl-js",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcandens/mapbox-gl-react.git"
+  },
+  "main": "src/index.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
     "test": "./node_modules/.bin/gulp test"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react",
+    "mapbox",
+    "map",
+    "gl",
+    "react-component",
+    "mapbox-gl-js"
+  ],
+  "author": "Joseph Thies",
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
