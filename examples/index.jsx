@@ -1,3 +1,5 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import React from 'react';
 import { render } from 'react-dom';
 

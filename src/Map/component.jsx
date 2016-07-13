@@ -11,6 +11,9 @@ export default class Map extends Component {
     sources: {},
     layers: [],
   }
+  getChildContext = () => ({
+    map: this.state.map,
+  })
   componentDidMount = () => {
     const {
       accessToken,
@@ -48,6 +51,7 @@ export default class Map extends Component {
       this.setState({
         ...this.state,
         loaded: true,
+        map,
       });
       if (this.queue.length > 0) {
         this.processQueue();
@@ -141,11 +145,14 @@ export default class Map extends Component {
         ref={c => { this.mapContainer = c; }}
         className="mapbox-gl-container"
       >
+        {this.props.children}
       </div>
     );
   };
 }
-
+Map.childContextTypes = {
+  map: PropTypes.object,
+};
 Map.defaultProps = {
   sources: {},
   layers: [],
