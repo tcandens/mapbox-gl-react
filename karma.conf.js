@@ -62,6 +62,9 @@ module.exports = (config) => {
         fs: 'empty',
       },
     },
+    webpackServer: {
+      quiet: true,
+    },
     reporters: ['mocha', 'coverage'],
     coverageReporter: {
       dir: 'coverage',
