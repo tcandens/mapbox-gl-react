@@ -5,46 +5,46 @@ const diff = (left, right) => !isEqual(left, right);
 
 export default class GeoJSONSource extends Component {
   state = {
-    source: null,
+    source: undefined,
   };
   getChildContext = () => ({
     map: this.context.map,
     name: this.props.name,
     source: this.state.source,
   })
-  shouldComponentUpdate = (nextProps, nextState) => (
-    true
-  )
-  componentWillReceiveProps = (nextProps) => {
-    if (diff(nextProps.data, this.props.data)) {
-      if (this.state.source) {
-        this.state.source.setData(nextProps.data);
-      }
-    }
-  }
-  componentDidUpdate = () => {
+  componentDidMount = () => {
     const { map } = this.context;
-    const {
-      name,
-      data,
-    } = this.props;
     if (!map) {
       console.warn('Source must be used inside of a Mapbox Map component.');
     } else {
-      if (this.state.source) {
-        this.state.source.setData(data);
-      } else {
-        const source = new Mapbox.GeoJSONSource({
-          data,
-        });
-        this.setState({ source });
-        map.addSource(name, source);
-      }
+      this.createSource();
+    }
+  }
+  componentWillReceiveProps = (nextProps, nextState) => {
+    if (diff(nextProps.data, this.props.data)) {
+      this.updateSource(nextProps.data);
+    } else if (typeof nextProps.data === 'string') {
+      this.updateSource(nextProps.data);
     }
   }
   componentWillUnmount = () => {
     const { map } = this.context;
     map.removeSource(this.props.name);
+  }
+  createSource = () => {
+    const { map } = this.context;
+    const {
+      name,
+      data,
+    } = this.props;
+    const source = new Mapbox.GeoJSONSource({
+      data,
+    });
+    this.setState({ source });
+    map.addSource(name, source);
+  }
+  updateSource = (data) => {
+    this.state.source.setData(data);
   }
   render = () => this.props.children || null;
 }
@@ -59,6 +59,9 @@ GeoJSONSource.contextTypes = {
 };
 GeoJSONSource.propTypes = {
   name: PropTypes.string,
-  data: PropTypes.object,
+  data: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
   children: PropTypes.element,
 };

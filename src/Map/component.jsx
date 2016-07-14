@@ -8,8 +8,7 @@ import 'mapbox-gl/css';
 export default class Map extends Component {
   state = {
     loaded: false,
-    sources: {},
-    layers: [],
+    map: undefined,
   }
   getChildContext = () => ({
     map: this.state.map,
@@ -18,14 +17,12 @@ export default class Map extends Component {
     const {
       accessToken,
       style,
-      sources,
-      layers,
       eventHandlers,
       center,
       zoom,
-      options,
       bearing,
       pitch,
+      options,
     } = this.props;
 
     Mapbox.accessToken = accessToken;
@@ -38,13 +35,6 @@ export default class Map extends Component {
       bearing,
       pitch,
       options,
-    });
-
-    Object.keys(sources).forEach(name => {
-      this.addSource(name, sources[name]);
-    });
-    layers.forEach(layer => {
-      this.addLayer(layer);
     });
 
     map.on('load', () => {
@@ -145,7 +135,7 @@ export default class Map extends Component {
         ref={c => { this.mapContainer = c; }}
         className="mapbox-gl-container"
       >
-        {this.props.children}
+        {this.state.loaded && this.props.children}
       </div>
     );
   };
@@ -154,8 +144,6 @@ Map.childContextTypes = {
   map: PropTypes.object,
 };
 Map.defaultProps = {
-  sources: {},
-  layers: [],
   eventHandlers: {},
   bearing: 0,
   pitch: 0,
@@ -177,8 +165,6 @@ Map.propTypes = {
     hash: PropTypes.boolean,
     interactive: PropTypes.boolean,
   }),
-  sources: PropTypes.object,
-  layers: PropTypes.arrayOf(PropTypes.object),
   eventHandlers: PropTypes.shape({
     movestart: PropTypes.func,
     mousedown: PropTypes.func,

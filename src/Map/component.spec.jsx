@@ -46,6 +46,7 @@ describe('<Map/>', function () {
   });
 
   describe('Unmounting', function () {
+    this.timeout(5000);
     let removeSpy;
     const Map = mount(
       <TestMap
@@ -59,14 +60,13 @@ describe('<Map/>', function () {
       />
     );
     it('should call map#remove on componentWillUnmount', function (done) {
-      this.timeout(1600);
       setTimeout(
         function () {
           Map.unmount();
           expect(removeSpy).toHaveBeenCalled();
           done();
         },
-        1500
+        4000
       );
     });
   });

@@ -6,14 +6,16 @@ export default class Layer extends Component {
       map,
       name,
     } = this.context;
+    const {
+      type,
+      paint,
+    } = this.props;
     if (map && map.getSource(name)) {
       map.addLayer({
         id: name,
         source: name,
-        type: 'circle',
-        paint: {
-          'circle-color': 'red',
-        },
+        type,
+        paint,
       });
     }
   }
