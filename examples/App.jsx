@@ -29,6 +29,7 @@ export default class App extends Component {
           zoom={2}
           eventHandlers={{
             load: (map) => {
+              console.log('map is loaded');
             },
           }}
         >

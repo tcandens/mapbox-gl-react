@@ -46,27 +46,21 @@ describe('<Map/>', function () {
   });
 
   describe('Unmounting', function () {
-    this.timeout(5000);
-    let removeSpy;
-    const Map = mount(
-      <TestMap
-        center={locations['seattle']}
-        zoom={12}
-        eventHandlers={{
-          load: (map) => {
-            removeSpy = expect.spyOn(map, 'remove');
-          },
-        }}
-      />
-    );
     it('should call map#remove on componentWillUnmount', function (done) {
-      setTimeout(
-        function () {
-          Map.unmount();
-          expect(removeSpy).toHaveBeenCalled();
-          done();
-        },
-        4000
+      this.timeout(2000);
+      const Map = mount(
+        <TestMap
+          center={locations['seattle']}
+          zoom={12}
+          eventHandlers={{
+            load: (map) => {
+              const removeSpy = expect.spyOn(map, 'remove');
+              Map.unmount();
+              expect(removeSpy).toHaveBeenCalled();
+              done();
+            },
+          }}
+        />
       );
     });
   });

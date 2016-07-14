@@ -7,6 +7,12 @@ module.exports = (config) => {
     files: [
       'tests.context.js',
     ],
+    client: {
+      captureConsole: true,
+      mocha: {
+        bail: false,
+      },
+    },
     preprocessors: {
       'tests.context.js': ['webpack', 'sourcemap'],
     },
@@ -62,6 +68,7 @@ module.exports = (config) => {
         fs: 'empty',
       },
     },
+    logLevel: config.LOG_ERROR,
     webpackServer: {
       quiet: true,
     },
