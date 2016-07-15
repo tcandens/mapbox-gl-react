@@ -3,7 +3,8 @@
   eslint func-names: "off",
   prefer-arrow-callback: "off",
   quote-props: "off",
-  dot-notation: "off"
+  dot-notation: "off",
+  react/prop-types: "off"
 */
 import React from 'react';
 import MapComponent from './component';
@@ -47,7 +48,7 @@ describe('<Map/>', function () {
 
   describe('Unmounting', function () {
     it('should call map#remove on componentWillUnmount', function (done) {
-      this.timeout(2000);
+      this.timeout(10000);
       const Map = mount(
         <TestMap
           center={locations['seattle']}
@@ -67,7 +68,7 @@ describe('<Map/>', function () {
 
   describe('Morphing props', function () {
     it('should transition map to new center', function (done) {
-      this.timeout(2000);
+      this.timeout(10000);
       const Map = mount(
         <TestMap
           center={locations['seattle']}

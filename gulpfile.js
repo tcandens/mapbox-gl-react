@@ -41,6 +41,7 @@ gulp.task('test', (done) => {
 gulp.task('tdd', (done) => {
   new Karma.Server({
     configFile: path.join(__dirname, 'karma.conf.js'),
+    reporters: ['mocha'],
   }, done).start();
 });
 

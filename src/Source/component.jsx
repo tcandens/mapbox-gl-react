@@ -15,7 +15,7 @@ export default class GeoJSONSource extends Component {
   componentDidMount = () => {
     const { map } = this.context;
     if (!map) {
-      console.warn('Source must be used inside of a Mapbox Map component.');
+      throw new Error('Source must be used inside of a Mapbox Map component.');
     } else {
       this.createSource();
     }
