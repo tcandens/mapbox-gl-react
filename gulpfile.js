@@ -9,6 +9,10 @@ const Karma = require('karma');
 gulp.task('examples', () => {
   const config = Object.assign({}, webpackConfig, {
     devtool: 'eval',
+    output: {
+      path: '/__build__',
+      publicPath: '/__build__/',
+    },
     entry: [
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
@@ -20,6 +24,7 @@ gulp.task('examples', () => {
     publicPath: '/__build__/',
     contentBase: './examples',
     hot: true,
+    historyApiFallback: true,
     stats: {
       colors: true,
     },

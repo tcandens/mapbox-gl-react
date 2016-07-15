@@ -55,6 +55,7 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.5.3",
     "react-addons-test-utils": "^15.2.1",
+    "react-router": "^2.5.2",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "turf-point": "^2.0.1",
