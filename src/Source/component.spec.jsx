@@ -16,6 +16,9 @@ import expect from 'expect';
 import point from 'turf-point';
 import config from '../../config.json';
 
+/**
+ * Higher Order Test Components
+ */
 class TestMap extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +44,6 @@ class TestMap extends Component {
     );
   }
 }
-
 class TestMapWithSource extends Component {
   constructor(props) {
     super(props);
