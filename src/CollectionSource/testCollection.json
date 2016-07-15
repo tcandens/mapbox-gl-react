@@ -1,0 +1,1147 @@
+[
+  {
+    "application_permit_number" : "6544627",
+    "contractor" : "WYGAL BUILDERS LLC",
+    "address" : "2211 WAVERLY WAY E",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.63879252",
+    "work_type" : "Plan Review",
+    "description" : "Construct addition and alterations to existing single family residence, per plan.",
+    "permit_type" : "Construction",
+    "applicant_name" : "BEECH, JONATHAN",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.63879252",
+      "needs_recoding" : false,
+      "longitude" : "-122.28816818"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6544627"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "63496",
+    "status" : "Application Accepted",
+    "longitude" : "-122.28816818"
+  }
+  , {
+    "application_permit_number" : "6539019",
+    "address" : "10002 17TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.70141813",
+    "work_type" : "No plan review",
+    "description" : "Construct bathroom addition to detached structure accessory to single family residence subject to field inspection (STFI)",
+    "expiration_date" : "2017-12-07T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "HOUSTON, LAWRENCE",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.70141813",
+      "needs_recoding" : false,
+      "longitude" : "-122.30941508"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6539019"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "8000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.30941508"
+  }
+  , {
+    "application_permit_number" : "6546115",
+    "address" : "914 W BARRETT ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.64707636",
+    "work_type" : "No plan review",
+    "description" : "Addition of three dormers and interior alterations (walls for unfinished basement, rebuild stair to basement, wall between kitchen and living room) to existing single family residence, subject to field inspection",
+    "expiration_date" : "2018-01-14T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "CHIHARA, JERRY",
+    "issue_date" : "2016-07-14T00:00:00",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.64707636",
+      "needs_recoding" : false,
+      "longitude" : "-122.37002732"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6546115"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "75000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.37002732"
+  }
+  , {
+    "application_permit_number" : "6546133",
+    "address" : "2224 NE 83RD ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.69001216",
+    "work_type" : "No plan review",
+    "description" : "Construct interior alterations to convert garage into living space and establish surface parking at existing single family residence,subject to field inspection, (STFI).",
+    "expiration_date" : "2018-01-14T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "KACKMAN, BOB",
+    "issue_date" : "2016-07-14T00:00:00",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.69001216",
+      "needs_recoding" : false,
+      "longitude" : "-122.30319084"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6546133"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "10000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.30319084"
+  }
+  , {
+    "application_permit_number" : "6546141",
+    "address" : "4314 NE 65TH ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.67600268",
+    "work_type" : "No plan review",
+    "description" : "Construct alterations in basement of an existing family residence subject to field inspection (STF)",
+    "expiration_date" : "2018-01-14T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "WERNER, NATHAN",
+    "issue_date" : "2016-07-14T00:00:00",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.67600268",
+      "needs_recoding" : false,
+      "longitude" : "-122.28146428"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6546141"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "25000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.28146428"
+  }
+  , {
+    "application_permit_number" : "6513852",
+    "address" : "308 NE LONGWOOD PL",
+    "action_type" : "DEMOLITION",
+    "latitude" : "47.68447567",
+    "work_type" : "No plan review",
+    "description" : "Demolish a single family residence, subject to field investigation.",
+    "permit_type" : "Demolition",
+    "applicant_name" : "COBB, PATRICK",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.68447567",
+      "needs_recoding" : false,
+      "longitude" : "-122.32520524"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6513852"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "0",
+    "status" : "Reviews Completed",
+    "longitude" : "-122.32520524"
+  }
+  , {
+    "application_permit_number" : "6546122",
+    "contractor" : "BLANKET: 223 YALE BUILDING",
+    "address" : "223 YALE AVE N",
+    "action_type" : "ALTER",
+    "latitude" : "47.62030071",
+    "work_type" : "Plan Review",
+    "description" : "Blanket Permit for interior non-structural alterations to the 3rd floor. For SHOES.COM, per plans.",
+    "permit_type" : "Construction",
+    "applicant_name" : "COLLINS, AIMEE",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.62030071",
+      "needs_recoding" : false,
+      "longitude" : "-122.33079631"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6546122"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "125000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.33079631"
+  }
+  , {
+    "application_permit_number" : "6546089",
+    "address" : "520 PIKE ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.61125861",
+    "work_type" : "No plan review",
+    "description" : "Construct interior alterations on the 16th floor (West side) of a commercial building (ExtraHop) subject to field inspection (STFI)",
+    "expiration_date" : "2018-01-14T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "TOMCHAK, DAPHNE",
+    "issue_date" : "2016-07-14T00:00:00",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.61125861",
+      "needs_recoding" : false,
+      "longitude" : "-122.33495033"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6546089"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "8000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.33495033"
+  }
+  , {
+    "application_permit_number" : "6546044",
+    "address" : "1100 FAIRVIEW AVE N",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.62855692",
+    "work_type" : "No plan review",
+    "description" : "Construct non-structural alterations to existing commercial building (Hutchinson building C) on 2nd floor west portion of the building, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-14T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "LUCEY, EMILY",
+    "issue_date" : "2016-07-14T00:00:00",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.62855692",
+      "needs_recoding" : false,
+      "longitude" : "-122.33036774"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6546044"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "48400",
+    "status" : "Permit Issued",
+    "longitude" : "-122.33036774"
+  }
+  , {
+    "application_permit_number" : "6546037",
+    "address" : "1100 FAIRVIEW AVE N",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.62855692",
+    "work_type" : "No plan review",
+    "description" : "Construct interior non - structural alterations to room 112 of existing commercial building (Hutchinson Building C) on the 2nd floor west portion of the building, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-14T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "LUCEY, EMILY",
+    "issue_date" : "2016-07-14T00:00:00",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.62855692",
+      "needs_recoding" : false,
+      "longitude" : "-122.33036774"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6546037"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "19000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.33036774"
+  }
+  , {
+    "application_permit_number" : "6546046",
+    "address" : "223 PROSPECT ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.62875272",
+    "work_type" : "No plan review",
+    "description" : "Construct deck addition, subject to field inspection (STFI)",
+    "expiration_date" : "2018-01-14T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "CAMERON, SCOTT",
+    "issue_date" : "2016-07-14T00:00:00",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.62875272",
+      "needs_recoding" : false,
+      "longitude" : "-122.35172223"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6546046"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "2140",
+    "status" : "Permit Issued",
+    "longitude" : "-122.35172223"
+  }
+  , {
+    "application_permit_number" : "6533422",
+    "address" : "2207 5TH AVE N",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.63856730",
+    "work_type" : "Plan Review",
+    "description" : "Addition and alterations to an existing single family residence, per plan.",
+    "permit_type" : "Construction",
+    "applicant_name" : "MORRIS, TOM",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.6385673",
+      "needs_recoding" : false,
+      "longitude" : "-122.34736262"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6533422"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "35000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.34736262"
+  }
+  , {
+    "application_permit_number" : "6543018",
+    "address" : "520 W RAYE ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.64351103",
+    "work_type" : "No plan review",
+    "description" : "Interior non-structural alterations to existing commercial building, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-14T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "ALDER, SANDRA",
+    "issue_date" : "2016-07-14T00:00:00",
+    "application_date" : "2016-07-14T00:00:00",
+    "location" : {
+      "latitude" : "47.64351103",
+      "needs_recoding" : false,
+      "longitude" : "-122.36433562"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6543018"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "50000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.36433562"
+  }
+  , {
+    "application_permit_number" : "6541558",
+    "address" : "9037 11TH AVE SW",
+    "action_type" : "TREE/VEGETATION MAINT/RESTORE",
+    "latitude" : "47.52169740",
+    "work_type" : "No plan review",
+    "description" : "Removal black locusts in irreconcilable conflict with house (has outgrown space).",
+    "permit_type" : "Site Development",
+    "applicant_name" : "RYAN, TIMOTHY KYLE",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.5216974",
+      "needs_recoding" : false,
+      "longitude" : "-122.34952269"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6541558"
+    },
+    "value" : "0",
+    "status" : "AP Closed",
+    "longitude" : "-122.34952269"
+  }
+  , {
+    "application_permit_number" : "6545880",
+    "address" : "5727 63RD AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.67073025",
+    "work_type" : "No plan review",
+    "description" : "Construct interior structural alterations to existing single family residence, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "BENSON, CORY",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.67073025",
+      "needs_recoding" : false,
+      "longitude" : "-122.26129084"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545880"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "200000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.26129084"
+  }
+  , {
+    "application_permit_number" : "6545879",
+    "address" : "4506 DELRIDGE WAY SW",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.56266413",
+    "work_type" : "No plan review",
+    "description" : "Construct alterations to remove rear portion of existing single family residence, subject to field inspection, (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "HAIZLIP, MARK",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.56266413",
+      "needs_recoding" : false,
+      "longitude" : "-122.36306961"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545879"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "4000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.36306961"
+  }
+  , {
+    "application_permit_number" : "6545886",
+    "address" : "6736 48TH AVE SW",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.54221185",
+    "work_type" : "No plan review",
+    "description" : "Construct interior kitchen remodel on main floor of an existing single family residence subject to field inspection (STFI)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "GRUNDHOFFER, PAUL",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.54221185",
+      "needs_recoding" : false,
+      "longitude" : "-122.39477655"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545886"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "40000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.39477655"
+  }
+  , {
+    "application_permit_number" : "6545865",
+    "address" : "6842 49TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.67886396",
+    "work_type" : "No plan review",
+    "description" : "Construct interior alterations in basement of an existing single family residence subject to field inspection (STFI)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "COUPARD, JAY",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.67886396",
+      "needs_recoding" : false,
+      "longitude" : "-122.27539976"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545865"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "115000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.27539976"
+  }
+  , {
+    "application_permit_number" : "6545865",
+    "address" : "6842 49TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.67886396",
+    "work_type" : "No plan review",
+    "description" : "Construct interior alterations in basement of an existing single family residence subject to field inspection (STFI)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "COUPARD, JAY",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.67886396",
+      "needs_recoding" : false,
+      "longitude" : "-122.27539976"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545865"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "115000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.27539976"
+  }
+  , {
+    "application_permit_number" : "6545785",
+    "address" : "6410 9TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.67539648",
+    "work_type" : "No plan review",
+    "description" : "Replace window flashing and minor repairs in kind for walls on an existing apartment complex, subject to field inspection, (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "SHERMAN, SHAWNA",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.67539648",
+      "needs_recoding" : false,
+      "longitude" : "-122.31844063"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545785"
+    },
+    "category" : "MULTIFAMILY",
+    "value" : "132300",
+    "status" : "Permit Issued",
+    "longitude" : "-122.31844063"
+  }
+  , {
+    "application_permit_number" : "6528543",
+    "contractor" : "AGUSTIN SANDOVAL",
+    "address" : "2636 22ND AVE W",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.64405337",
+    "work_type" : "No plan review",
+    "description" : "Construct interior alterations on main floor of an exsiting condo (#102) sibject to field inspection (STFI)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "SANDOVAL, AGUSTIN",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.64405337",
+      "needs_recoding" : false,
+      "longitude" : "-122.38414854"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6528543"
+    },
+    "category" : "MULTIFAMILY",
+    "value" : "4500",
+    "status" : "Permit Issued",
+    "longitude" : "-122.38414854"
+  }
+  , {
+    "application_permit_number" : "6544630",
+    "address" : "5545 27TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.66983862",
+    "work_type" : "No plan review",
+    "description" : "Interior alterations to existing single family residence (main floor and basement), subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "MORGAN, BRYCE",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.66983862",
+      "needs_recoding" : false,
+      "longitude" : "-122.29883578"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6544630"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "44950",
+    "status" : "Permit Issued",
+    "longitude" : "-122.29883578"
+  }
+  , {
+    "application_permit_number" : "6544630",
+    "address" : "5545 27TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.66983862",
+    "work_type" : "No plan review",
+    "description" : "Interior alterations to existing single family residence (main floor and basement), subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "MORGAN, BRYCE",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.66983862",
+      "needs_recoding" : false,
+      "longitude" : "-122.29883578"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6544630"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "44950",
+    "status" : "Permit Issued",
+    "longitude" : "-122.29883578"
+  }
+  , {
+    "application_permit_number" : "6545820",
+    "address" : "3226 6TH AVE W",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.64920733",
+    "work_type" : "No plan review",
+    "description" : "Construct interior alterations on main floor of Ames library at Seattle Pacific subject to field inspection (STFI)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "NG, MALENA",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.64920733",
+      "needs_recoding" : false,
+      "longitude" : "-122.36383969"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545820"
+    },
+    "category" : "INSTITUTIONAL",
+    "value" : "9000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.36383969"
+  }
+  , {
+    "application_permit_number" : "6545808",
+    "address" : "2021 7TH AVE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.61523711",
+    "work_type" : "No plan review",
+    "description" : "Construct alterations on the SW corner of the 30th floor of Amazon, subject to field inspection (STFI)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "TAYLOR, SCOTT",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.61523711",
+      "needs_recoding" : false,
+      "longitude" : "-122.33836402"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545808"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "4000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.33836402"
+  }
+  , {
+    "application_permit_number" : "6545802",
+    "address" : "500 BOREN AVE N",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.62383970",
+    "work_type" : "No plan review",
+    "description" : "Construct tenant improvements to NE portion of 2nd floor of existing office space, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "TAYLOR, SCOTT",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.6238397",
+      "needs_recoding" : false,
+      "longitude" : "-122.33561795"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545802"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "4000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.33561795"
+  }
+  , {
+    "application_permit_number" : "6545790",
+    "address" : "8558 GREENWOOD AVE N",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.69158126",
+    "work_type" : "No plan review",
+    "description" : "Tenant improvements to existing commercial space subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "THORNBURG, CURT",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.69158126",
+      "needs_recoding" : false,
+      "longitude" : "-122.35498747"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545790"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "15000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.35498747"
+  }
+  , {
+    "application_permit_number" : "6545789",
+    "address" : "500 BOREN AVE N",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.62383970",
+    "work_type" : "No plan review",
+    "description" : "Tenant improvements to SE area of 3rd floor, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "TAYLOR, SCOTT",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.6238397",
+      "needs_recoding" : false,
+      "longitude" : "-122.33561795"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545789"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "4000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.33561795"
+  }
+  , {
+    "application_permit_number" : "6545779",
+    "address" : "333 BOREN AVE N",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.62113072",
+    "work_type" : "No plan review",
+    "description" : "Tenant improvements to existing office space, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "TAYLOR, SCOTT",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.62113072",
+      "needs_recoding" : false,
+      "longitude" : "-122.33630945"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545779"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "200",
+    "status" : "Permit Issued",
+    "longitude" : "-122.33630945"
+  }
+  , {
+    "application_permit_number" : "6544811",
+    "address" : "1811 E LYNN ST",
+    "action_type" : "TREE/VEGETATION MAINT/RESTORE",
+    "latitude" : "47.63932566",
+    "work_type" : "No plan review",
+    "description" : "Removal of deodar cedar. Tree risk assessment provided.",
+    "permit_type" : "Site Development",
+    "applicant_name" : "KREITZER, JAKE",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.63932566",
+      "needs_recoding" : false,
+      "longitude" : "-122.30842198"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6544811"
+    },
+    "value" : "0",
+    "status" : "AP Closed",
+    "longitude" : "-122.30842198"
+  }
+  , {
+    "application_permit_number" : "6545759",
+    "address" : "3055 MAGNOLIA BLVD W",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.64856472",
+    "work_type" : "No plan review",
+    "description" : "Construct non-structural interior alterations to master bath of existing single family residence, subject to field inspection (STFI.)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "CONWAY, STACIE",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.64856472",
+      "needs_recoding" : false,
+      "longitude" : "-122.41472629"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545759"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "30000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.41472629"
+  }
+  , {
+    "application_permit_number" : "6537958",
+    "address" : "200 W HIGHLAND DR",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.62985781",
+    "work_type" : "Plan Review",
+    "description" : "Construct alterations to existing apartment building for unit 502, per plan.",
+    "expiration_date" : "2017-11-06T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "SHEPP, BOB",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.62985781",
+      "needs_recoding" : false,
+      "longitude" : "-122.35964685"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6537958"
+    },
+    "category" : "MULTIFAMILY",
+    "value" : "85000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.35964685"
+  }
+  , {
+    "application_permit_number" : "6541850",
+    "address" : "3626 NE 45TH ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.66147809",
+    "work_type" : "No plan review",
+    "description" : "Alteration to existing commercial building, replace ground level windows, subject to field inspection (STFI.)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "WHALEN, MIKE",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.66147809",
+      "needs_recoding" : false,
+      "longitude" : "-122.288095"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6541850"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "15000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.288095"
+  }
+  , {
+    "application_permit_number" : "6545753",
+    "address" : "901 RAINIER AVE S",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.59394380",
+    "work_type" : "No plan review",
+    "description" : "Tenant improvements to upper level of existing office space, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "STARR, SCOTT",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.5939438",
+      "needs_recoding" : false,
+      "longitude" : "-122.31065511"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545753"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "120000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.31065511"
+  }
+  , {
+    "application_permit_number" : "6544759",
+    "address" : "1415 5TH AVE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.60996157",
+    "work_type" : "No plan review",
+    "description" : "Nonstructural alterations to bathrooms and replace finishes in guest rooms and guest corridors at floors 14-20 of existing hotel subject to field inspection, (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "O'HARE, JON",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.60996157",
+      "needs_recoding" : false,
+      "longitude" : "-122.33573595"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6544759"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "1100000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.33573595"
+  }
+  , {
+    "application_permit_number" : "6515303",
+    "contractor" : "BENCO PROPERTIES INC",
+    "address" : "917 SW HOLDEN ST",
+    "action_type" : "NEW",
+    "latitude" : "47.53386175",
+    "work_type" : "Plan Review",
+    "description" : "Establish use as multifamily residential use and construct apartment, occupy per plan.",
+    "permit_type" : "Construction",
+    "applicant_name" : "NOVION, SHAUN",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.53386175",
+      "needs_recoding" : false,
+      "longitude" : "-122.34810177"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6515303"
+    },
+    "category" : "MULTIFAMILY",
+    "value" : "457684",
+    "status" : "Application Accepted",
+    "longitude" : "-122.34810177"
+  }
+  , {
+    "application_permit_number" : "6545414",
+    "address" : "1820 BOYLSTON AVE",
+    "action_type" : "DEMOLITION",
+    "latitude" : "47.61822608",
+    "work_type" : "No plan review",
+    "description" : "Demo existing multifamily structure for new multifamily building, (STFI).",
+    "permit_type" : "Demolition",
+    "applicant_name" : "JOHNSON, PETER",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.61822608",
+      "needs_recoding" : false,
+      "longitude" : "-122.32299348"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545414"
+    },
+    "category" : "MULTIFAMILY",
+    "master_use_permit" : "3020247",
+    "value" : "0",
+    "status" : "Reviews Completed",
+    "longitude" : "-122.32299348"
+  }
+  , {
+    "application_permit_number" : "6529676",
+    "address" : "1223 17TH AVE E",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.63132360",
+    "work_type" : "Plan Review",
+    "description" : "Construct additions and alterations including create a 3rd story and enlarge existing basement for an existing single family residence, per plan.",
+    "permit_type" : "Construction",
+    "applicant_name" : "PENNELL, RUTH ANN",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.6313236",
+      "needs_recoding" : false,
+      "longitude" : "-122.31025626"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6529676"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "450000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.31025626"
+  }
+  , {
+    "application_permit_number" : "6531608",
+    "address" : "5518 16TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.66909495",
+    "work_type" : "Plan Review",
+    "description" : "Construct detached garage and roof deck, per plans.",
+    "permit_type" : "Construction",
+    "applicant_name" : "GREGGS, ELAINE",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.66909495",
+      "needs_recoding" : false,
+      "longitude" : "-122.31047467"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6531608"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "31413",
+    "status" : "Application Accepted",
+    "longitude" : "-122.31047467"
+  }
+  , {
+    "application_permit_number" : "6538933",
+    "address" : "6100 4TH AVE S",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.54699833",
+    "work_type" : "Plan Review",
+    "description" : "Construct alterations to existing commercial office building at the East & West entries, per plan.",
+    "permit_type" : "Construction",
+    "applicant_name" : "BRAJCICH, JEFFREY",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.54699833",
+      "needs_recoding" : false,
+      "longitude" : "-122.32883209"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6538933"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "250000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.32883209"
+  }
+  , {
+    "application_permit_number" : "6541191",
+    "address" : "5044 38TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.66624598",
+    "work_type" : "Plan Review",
+    "description" : "Construct additions and alterations to existing single family residence, per plan",
+    "permit_type" : "Construction",
+    "applicant_name" : "RAPTIS, JAMES",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.66624598",
+      "needs_recoding" : false,
+      "longitude" : "-122.28657123"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6541191"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "75000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.28657123"
+  }
+  , {
+    "application_permit_number" : "6541191",
+    "address" : "5044 38TH AVE NE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.66624598",
+    "work_type" : "Plan Review",
+    "description" : "Construct additions and alterations to existing single family residence, per plan",
+    "permit_type" : "Construction",
+    "applicant_name" : "RAPTIS, JAMES",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.66624598",
+      "needs_recoding" : false,
+      "longitude" : "-122.28657123"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6541191"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "75000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.28657123"
+  }
+  , {
+    "application_permit_number" : "6468786",
+    "address" : "4436 23RD AVE SW",
+    "action_type" : "NEW",
+    "latitude" : "47.56320449",
+    "work_type" : "Plan Review",
+    "description" : "Establish use as and construct new single family residence with attached garage, per plan.",
+    "permit_type" : "Construction",
+    "applicant_name" : "STRIZHEUS, PAVEL",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.56320449",
+      "needs_recoding" : false,
+      "longitude" : "-122.36228914"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6468786"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "375061",
+    "status" : "Application Accepted",
+    "longitude" : "-122.36228914"
+  }
+  , {
+    "application_permit_number" : "6536959",
+    "contractor" : "J E CUMMING CORP",
+    "address" : "701 5TH AVE",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.60454089",
+    "work_type" : "Plan Review",
+    "description" : "Construct tenant improvements to existing commercial building on the 35th floor, SSA office (structural only), per plan.",
+    "permit_type" : "Construction",
+    "applicant_name" : "LOSEKANN, ANDREA",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.60454089",
+      "needs_recoding" : false,
+      "longitude" : "-122.33073506"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6536959"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "5000",
+    "status" : "Application Accepted",
+    "longitude" : "-122.33073506"
+  }
+  , {
+    "application_permit_number" : "6541273",
+    "address" : "2405 1ST AVE",
+    "action_type" : "DEMOLITION",
+    "latitude" : "47.61410326",
+    "work_type" : "Plan Review",
+    "description" : "Demolish commercial building, per plan.",
+    "permit_type" : "Demolition",
+    "applicant_name" : "BLAIS, JIMMY",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.61410326",
+      "needs_recoding" : false,
+      "longitude" : "-122.34824352"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6541273"
+    },
+    "category" : "COMMERCIAL",
+    "value" : "0",
+    "status" : "Application Accepted",
+    "longitude" : "-122.34824352"
+  }
+  , {
+    "application_permit_number" : "6543565",
+    "address" : "2115 NE 77TH ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.68466997",
+    "work_type" : "No plan review",
+    "description" : "Construct deck addition to an existing single family residence subject to field inspection (STFI)",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "KLEVEN, DAVID",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.68466997",
+      "needs_recoding" : false,
+      "longitude" : "-122.30490161"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6543565"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "10888",
+    "status" : "Permit Issued",
+    "longitude" : "-122.30490161"
+  }
+  , {
+    "application_permit_number" : "6545696",
+    "address" : "3116 SW WEBSTER ST",
+    "action_type" : "ADD/ALT",
+    "latitude" : "47.53574984",
+    "work_type" : "No plan review",
+    "description" : "Repair interior fire damage to existing single family residence, subject to field inspection (STFI).",
+    "expiration_date" : "2018-01-13T00:00:00",
+    "permit_type" : "Construction",
+    "applicant_name" : "LOW, CLIFFORD",
+    "issue_date" : "2016-07-13T00:00:00",
+    "application_date" : "2016-07-13T00:00:00",
+    "location" : {
+      "latitude" : "47.53574984",
+      "needs_recoding" : false,
+      "longitude" : "-122.37337314"
+    },
+    "permit_and_complaint_status_url" : {
+      "url" : "http://web6.seattle.gov/dpd/PermitStatus/Project.aspx?id=6545696"
+    },
+    "category" : "SINGLE FAMILY / DUPLEX",
+    "value" : "50000",
+    "status" : "Permit Issued",
+    "longitude" : "-122.37337314"
+  }
+]

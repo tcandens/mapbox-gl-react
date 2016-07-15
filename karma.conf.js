@@ -31,7 +31,7 @@ module.exports = (config) => {
       resolve: {
         alias: {
           'mapbox-gl/css': path.join(__dirname, 'node_modules/mapbox-gl/dist/mapbox-gl.css'),
-          'mapbox-gl/js': path.join(__dirname, 'node_modules/mapbox-gl/dist/mapbox-gl-dev.js'),
+          'mapbox-gl/js': path.join(__dirname, 'node_modules/mapbox-gl/dist/mapbox-gl.js'),
         },
         extensions: ['', '.js', '.jsx'],
       },

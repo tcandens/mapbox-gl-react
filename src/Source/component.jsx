@@ -4,6 +4,20 @@ import isEqual from 'lodash/isEqual';
 import isArray from 'lodash/isArray';
 const diff = (left, right) => !isEqual(left, right);
 
+export function verifyData(data, oldData) {
+  if (oldData && typeof data === 'object') {
+    if (diff(data, oldData) && data !== {}) {
+      return true;
+    }
+    return false;
+  } else if (typeof data === 'object' && data !== {}) {
+    return true;
+  } else if (typeof data === 'string' && data !== '') {
+    return true;
+  }
+  return false;
+}
+
 export default class GeoJSONSource extends Component {
   state = {
     source: undefined,
@@ -21,15 +35,15 @@ export default class GeoJSONSource extends Component {
       this.createSource();
     }
   }
-  componentWillReceiveProps = (nextProps, nextState) => {
-    if (diff(nextProps.data, this.props.data)) {
-      this.updateSource(nextProps.data);
-    } else if (typeof nextProps.data === 'string') {
+  componentWillReceiveProps = (nextProps) => {
+    if (verifyData(nextProps.data, this.props.data)) {
       this.updateSource(nextProps.data);
     }
   }
   componentWillUnmount = () => {
     const { map } = this.context;
+    // If map.style is null, parent map is unmounting.
+    if (!map || !map.style) return;
     map.removeSource(this.props.name);
   }
   createSource = () => {
@@ -38,6 +52,7 @@ export default class GeoJSONSource extends Component {
       name,
       data,
     } = this.props;
+    if (!verifyData(data)) return;
     const source = new Mapbox.GeoJSONSource({
       data,
     });
@@ -58,14 +73,6 @@ export default class GeoJSONSource extends Component {
   };
 }
 
-GeoJSONSource.childContextTypes = {
-  name: PropTypes.string,
-  source: PropTypes.object,
-  map: PropTypes.object,
-};
-GeoJSONSource.contextTypes = {
-  map: PropTypes.object,
-};
 GeoJSONSource.propTypes = {
   name: PropTypes.string,
   data: PropTypes.oneOfType([
@@ -77,4 +84,12 @@ GeoJSONSource.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
+};
+GeoJSONSource.contextTypes = {
+  map: PropTypes.object,
+};
+GeoJSONSource.childContextTypes = {
+  name: PropTypes.string,
+  source: PropTypes.object,
+  map: PropTypes.object,
 };

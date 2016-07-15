@@ -4,16 +4,14 @@ import compact from 'lodash/compact';
 
 import './App.sass';
 
-export default function App({ children, location, routes }) {
-  const routeLinks = compact(routes.map((route, index) => {
-    if (route.path) {
-      return (
-        <Link to={route.path} key={`route-${index}`}>
-          {route.component.name}
-        </Link>
-      );
-    }
-  }));
+export default function App({ children, location }) {
+  const routes = {
+    '/': 'Base Components',
+    '/collectionSource': 'Collection Source',
+  };
+  const routeLinks = Object.keys(routes).map((route, index) => {
+    return <Link to={route} key={index}>{routes[route]}</Link>;
+  });
   return (
     <section className="container">
       <nav className="navigation">

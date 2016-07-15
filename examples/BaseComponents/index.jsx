@@ -16,7 +16,7 @@ export default class BaseComponentExample extends Component {
       });
     };
     setData();
-    setInterval(setData, 2000);
+    this.interval = setInterval(setData, 2000);
     fetch('https://data.seattle.gov/resource/mags-97de.json')
       .then(response => {
         return response.json();
@@ -36,6 +36,9 @@ export default class BaseComponentExample extends Component {
           permits: geoJSON,
         });
       });
+  }
+  componentWillUnmount = () => {
+    clearInterval(this.interval);
   }
   render = () => {
     return (

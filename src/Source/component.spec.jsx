@@ -74,6 +74,22 @@ describe('<Source/>', function () {
       }
       expect(TestSource).toBeA(Error);
     });
+    it('should noop if data is empty', function (done) {
+      function continueTest(map) {
+        const foundSource = map.getSource('test');
+        expect(foundSource).toNotExist();
+        done();
+      }
+      mount(
+        <TestMap
+          eventHandlers={{
+            load: continueTest,
+          }}
+        >
+          <SourceComponent name="test" data={null} />
+        </TestMap>
+      );
+    });
     it('should add source to map', function (done) {
       this.timeout(5000);
       function continueTest(map) {

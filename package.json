@@ -51,6 +51,7 @@
     "karma-coverage": "^1.1.0",
     "karma-mocha": "^1.1.1",
     "karma-mocha-reporter": "^2.0.4",
+    "karma-phantomjs-launcher": "^1.0.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.5.3",
@@ -59,6 +60,7 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "turf-point": "^2.0.1",
+    "turf-random": "^3.0.12",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
@@ -67,6 +69,7 @@
     "mapbox-gl": "^0.20.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "react-hot-loader": "^3.0.0-beta.2"
+    "react-hot-loader": "^3.0.0-beta.2",
+    "turf-featurecollection": "^1.0.1"
   }
 }
