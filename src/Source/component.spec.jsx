@@ -10,7 +10,6 @@
 import React, { Component } from 'react';
 import MapComponent from '../Map';
 import SourceComponent from './component';
-import Mapbox from 'mapbox-gl/js';
 import { mount } from 'enzyme';
 import expect from 'expect';
 import point from 'turf-point';
@@ -76,7 +75,7 @@ describe('<Source/>', function () {
       expect(TestSource).toBeA(Error);
     });
     it('should add source to map', function (done) {
-      this.timeout(10000);
+      this.timeout(5000);
       function continueTest(map) {
         const source = map.getSource('test');
         expect(source).toExist();
@@ -96,7 +95,7 @@ describe('<Source/>', function () {
 
   describe('Mutation', function () {
     it('should update source from data props', function (done) {
-      this.timeout(10000);
+      this.timeout(5000);
       const mapWrapper = mount(
         <TestMapWithSource
           eventHandlers={{
@@ -113,11 +112,12 @@ describe('<Source/>', function () {
         />
       );
     });
+    it('should update source if data is url string');
   });
 
   describe('Unmounting', function () {
     it('should remove source from map on componentWillUnmount', function (done) {
-      this.timeout(10000);
+      this.timeout(5000);
       function continueTest(map) {
         const source = map.getSource('test');
         expect(source).toNotExist();

@@ -1,30 +1,47 @@
 import React, { Component, PropTypes } from 'react';
+import uniqueId from 'lodash/uniqueId';
 
 export default class Layer extends Component {
-  componentDidUpdate = () => {
+  id = '';
+  componentDidMount = () => {
     const {
       map,
+      source,
       name,
     } = this.context;
     const {
       type,
-      paint,
+      ...style,
     } = this.props;
-    if (map && map.getSource(name)) {
-      map.addLayer({
-        id: name,
-        source: name,
-        type,
-        paint,
-      });
+    if (!source) {
+      throw new Error('Layer must be used inside a Source component.');
+    }
+    this.generateId(name, type);
+    if (!map.getLayer(this.id)) {
+      this.createLayer(type, ...style);
     }
   }
+  shouldComponentUpdate = () => false;
   componentWillUnmount = () => {
+    const {
+      map,
+    } = this.context;
+    map.removeLayer(this.id);
+  }
+  generateId = (name, type) => {
+    this.id = uniqueId(`${name}-${type}-`);
+  }
+  createLayer = (type, ...style) => {
     const {
       map,
       name,
     } = this.context;
-    map.removeLayer(name);
+    map.addLayer({
+      id: this.id,
+      source: name,
+      type,
+      ...style,
+    });
   }
   render = () => null;
 }
@@ -35,6 +52,8 @@ Layer.contextTypes = {
   source: PropTypes.object,
 };
 Layer.propTypes = {
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['symbol', 'circle']).isRequired,
   paint: PropTypes.object,
+  layout: PropTypes.object,
+  filter: PropTypes.object,
 };

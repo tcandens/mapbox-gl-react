@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Mapbox from 'mapbox-gl/js';
 import isEqual from 'lodash/isEqual';
+import isArray from 'lodash/isArray';
 const diff = (left, right) => !isEqual(left, right);
 
 export default class GeoJSONSource extends Component {
@@ -46,7 +47,15 @@ export default class GeoJSONSource extends Component {
   updateSource = (data) => {
     this.state.source.setData(data);
   }
-  render = () => this.props.children || null;
+  render = () => {
+    if (this.state.source) {
+      if (this.props.children && isArray(this.props.children)) {
+        return <div>{this.props.children}</div>;
+      }
+      return this.props.children || null;
+    }
+    return null;
+  };
 }
 
 GeoJSONSource.childContextTypes = {
@@ -63,5 +72,9 @@ GeoJSONSource.propTypes = {
     PropTypes.object,
     PropTypes.string,
   ]),
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
 };

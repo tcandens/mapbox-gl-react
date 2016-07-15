@@ -8,15 +8,36 @@ import './App.sass';
 export default class App extends Component {
   state = {
     data: {},
+    permits: {},
   }
   componentDidMount = () => {
     const setData = () => {
       this.setState({
+        ...this.state,
         data: 'https://wanderdrone.appspot.com/',
       });
     };
     setData();
     setInterval(setData, 2000);
+    fetch('https://data.seattle.gov/resource/mags-97de.json')
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        const geoJSON = {
+          type: 'FeatureCollection',
+          features: data.map(permit => (
+            point(
+              [permit.longitude, permit.latitude],
+              { value: permit.value }
+            )
+          )),
+        };
+        this.setState({
+          ...this.state,
+          permits: geoJSON,
+        });
+      });
   }
   render = () => {
     return (
@@ -35,7 +56,15 @@ export default class App extends Component {
         >
           <Source name="test" data={this.state.data}>
             <Layer type="circle" paint={{ 'circle-color': 'red' }} />
+            <Layer type="circle" paint={{ 'circle-color': 'blue' }} />
+            <Layer type="circle" paint={{ 'circle-color': 'blue' }} />
           </Source>
+          {/* <Source name="permits" data={this.state.permits}>
+            <Layer type="circle"
+            paint={{ 'circle-color': 'green' }}
+            filter={['>=', 'value', 3000]}
+            />
+          </Source>*/}
         </MapComponent>
       </div>
     );

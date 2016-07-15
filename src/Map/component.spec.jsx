@@ -48,7 +48,7 @@ describe('<Map/>', function () {
 
   describe('Unmounting', function () {
     it('should call map#remove on componentWillUnmount', function (done) {
-      this.timeout(10000);
+      this.timeout(5000);
       const Map = mount(
         <TestMap
           center={locations['seattle']}
@@ -68,7 +68,7 @@ describe('<Map/>', function () {
 
   describe('Morphing props', function () {
     it('should transition map to new center', function (done) {
-      this.timeout(10000);
+      this.timeout(5000);
       const Map = mount(
         <TestMap
           center={locations['seattle']}
@@ -81,7 +81,7 @@ describe('<Map/>', function () {
               const { lng, lat } = map.getCenter();
               const lngDiff = Math.abs(lng - locations['ballard'][0]);
               const latDiff = Math.abs(lat - locations['ballard'][1]);
-              const tolerance = 0.000001;
+              const tolerance = 0.00001;
               expect(lngDiff).toBeLessThan(tolerance);
               expect(latDiff).toBeLessThan(tolerance);
               done();
