@@ -87,6 +87,10 @@ describe('<Map/>', function () {
 
   describe('Unmounting', function () {
     it('should call map#remove on componentWillUnmount', function () {
+      const removeSpy = expect.spyOn(MapMock, 'remove').andCallThrough();
+      const mapWrapper = mount(<TestMap />);
+      mapWrapper.unmount();
+      expect(removeSpy).toHaveBeenCalled();
     });
   });
 
