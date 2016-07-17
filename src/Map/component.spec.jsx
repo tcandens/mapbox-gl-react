@@ -8,9 +8,14 @@
 */
 import React from 'react';
 import MapComponent from './component';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import expect from 'expect';
+import expectElement from 'expect-element';
 import config from '../../config.json';
+import Mapbox from 'mapbox-gl/dist/mapbox-gl';
+import MapboxMock from 'mapbox-gl-js-mock';
+
+expect.extend(expectElement);
 
 const locations = {
   'seattle': [-122.3372, 47.6111],
@@ -19,77 +24,74 @@ const locations = {
 };
 
 function TestMap(props) {
+  const {
+    children,
+    ...more,
+  } = props;
   return (
     <MapComponent
       accessToken={config.mapboxToken}
       style={config.mapboxStyle}
-      {...props}
-    />
+      center={locations['seattle']}
+      zoom={2}
+      {...more}
+    >
+      {children}
+    </MapComponent>
   );
 }
 
 describe('<Map/>', function () {
+  let MapboxSpy;
+  let MapMock;
+  beforeEach('Create Mapbox spy', function () {
+    MapMock = new MapboxMock.Map({});
+    MapboxSpy = expect.spyOn(Mapbox, 'Map').andReturn(MapMock);
+  });
+  afterEach('Restore spies', function () {
+    MapboxSpy.restore();
+  });
   describe('Mounting', function () {
-    const Map = mount(
-      <TestMap
-        center={locations['seattle']}
-        zoom={12}
-      />
-    );
-    it('should get class .mapboxgl-map from Mapbox-gl', function () {
-      const hasMapboxClasses = Map.find('.mapbox-gl-container').hasClass('mapboxgl-map');
-      expect(hasMapboxClasses).toBe(true);
+    it('should create a map in component container ref', function () {
+      mount(<TestMap />);
+      const mapContainer = MapboxSpy.calls[0].arguments[0].container;
+      expect(mapContainer).toHaveAttribute('class', 'mapbox-gl-container');
     });
-    it('should contain a mapbox-canvas-container', function () {
-      const canvasContainer = Map.find('.mapboxgl-canvas-container');
-      expect(canvasContainer).toExist();
+
+    it('should attach eventHandlers to map', function (done) {
+      const loadSpy = expect.spyOn(MapMock, 'on').andCallThrough();
+      const events = [
+        'onmove',
+        'onmoveend',
+        'click',
+        'mousemove',
+        'zoom',
+        'rotate',
+      ];
+      const mockEventHandlers = events.reduce((previous, current) => {
+        previous[current] = () => {}; // eslint-disable-line
+        return previous;
+      }, {});
+      mount(
+        <TestMap
+          eventHandlers={{
+            load: done,
+            ...mockEventHandlers,
+          }}
+        />
+      );
+      expect(MapMock._events).toIncludeKeys(events); // eslint-disable-line
+      expect(loadSpy).toHaveBeenCalledWith('load', done());
     });
   });
 
   describe('Unmounting', function () {
-    it('should call map#remove on componentWillUnmount', function (done) {
-      this.timeout(5000);
-      const Map = mount(
-        <TestMap
-          center={locations['seattle']}
-          zoom={12}
-          eventHandlers={{
-            load: (map) => {
-              const removeSpy = expect.spyOn(map, 'remove');
-              Map.unmount();
-              expect(removeSpy).toHaveBeenCalled();
-              done();
-            },
-          }}
-        />
-      );
+    it('should call map#remove on componentWillUnmount', function () {
     });
   });
 
   describe('Morphing props', function () {
-    it('should transition map to new center', function (done) {
-      this.timeout(5000);
-      const Map = mount(
-        <TestMap
-          center={locations['seattle']}
-          zoom={12}
-          eventHandlers={{
-            moveend: (map) => {
-              // Center will not match center props exactly due to
-              // JavaScript maths, but they should be within an
-              // acceptable range.
-              const { lng, lat } = map.getCenter();
-              const lngDiff = Math.abs(lng - locations['ballard'][0]);
-              const latDiff = Math.abs(lat - locations['ballard'][1]);
-              const tolerance = 0.00001;
-              expect(lngDiff).toBeLessThan(tolerance);
-              expect(latDiff).toBeLessThan(tolerance);
-              done();
-            },
-          }}
-        />
-      );
-      Map.setProps({ center: locations['ballard'] });
+    it('should transition map to new center', function () {
     });
   });
 });

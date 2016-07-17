@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import Mapbox from 'mapbox-gl/js';
+import Mapbox from 'mapbox-gl/dist/mapbox-gl';
 import isEqual from 'lodash/isEqual';
 const diff = (left, right) => !isEqual(left, right);
 
-import 'mapbox-gl/css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default class Map extends Component {
   state = {
@@ -60,10 +60,6 @@ export default class Map extends Component {
       this.updateView({ center: nextProps.center });
     }
   }
-  shouldComponentUpdate = (nextProps, nextState) => (
-      nextProps.center !== this.props.center ||
-      nextState.loaded !== this.state.loaded
-  )
   componentWillUnmount = () => {
     this.map.remove();
   }

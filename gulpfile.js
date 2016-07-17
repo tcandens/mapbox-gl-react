@@ -8,7 +8,7 @@ const Karma = require('karma');
 
 gulp.task('examples', () => {
   const config = Object.assign({}, webpackConfig, {
-    devtool: 'eval',
+    devtool: 'cheap-module-eval-source-map',
     output: {
       path: '/__build__',
       publicPath: '/__build__/',

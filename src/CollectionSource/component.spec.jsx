@@ -43,7 +43,7 @@ class TestMap extends Component {
   }
 }
 
-describe('<CollectionSource/>', function () {
+describe.skip('<CollectionSource/>', function () {
   describe('Mounting', function () {
     it('should not work outside of a map', function () {
       let source;

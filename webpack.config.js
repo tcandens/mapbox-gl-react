@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: [
     './src/index.js',
   ],
@@ -15,10 +15,6 @@ const config = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
-    alias: {
-      'mapbox-gl/css': path.join(__dirname, 'node_modules/mapbox-gl/dist/mapbox-gl.css'),
-      'mapbox-gl/js': path.join(__dirname, 'node_modules/mapbox-gl/dist/mapbox-gl-dev.js'),
-    },
     extensions: ['', '.js', '.jsx'],
   },
   module: {

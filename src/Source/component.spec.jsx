@@ -61,7 +61,7 @@ class TestMapWithSource extends Component {
   }
 }
 
-describe('<Source/>', function () {
+describe.skip('<Source/>', function () {
   describe('Mounting', function () {
     it('should only work inside a map', function () {
       let TestSource;

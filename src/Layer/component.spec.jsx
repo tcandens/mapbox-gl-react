@@ -45,7 +45,7 @@ class TestMap extends Component {
   }
 }
 
-describe('<Layer/>', function () {
+describe.skip('<Layer/>', function () {
   describe('Mounting', function () {
     it('should not mount outside of a <Source> component', function (done) {
       let layerWrapper;

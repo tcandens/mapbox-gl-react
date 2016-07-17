@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Mapbox from 'mapbox-gl/js';
+import Mapbox from 'mapbox-gl/dist/mapbox-gl';
 import isEqual from 'lodash/isEqual';
 import isArray from 'lodash/isArray';
 const diff = (left, right) => !isEqual(left, right);
