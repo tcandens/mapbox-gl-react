@@ -8,7 +8,7 @@
 */
 import React from 'react';
 import MapComponent from './component';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import expect from 'expect';
 import expectElement from 'expect-element';
 import config from '../../config.json';
