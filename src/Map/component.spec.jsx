@@ -85,7 +85,7 @@ describe('<Map/>', function () {
     });
   });
 
-  describe('Morphing props', function () {
+  describe('Mutating', function () {
     it('should transition map to new center', function () {
       // Spy on Mapbox method used to transition center of camera,
       // Could change later, e.g. 'jumpTo', 'panTo', etc...
@@ -98,6 +98,25 @@ describe('<Map/>', function () {
       );
       mapWrapper.setProps({ center: locations['ballard'] });
       expect(flyToSpy).toHaveBeenCalled();
+    });
+    it('should add loaded state on map#load and render children', function (done) {
+      const mapWrapper = mount(
+        <MapComponent
+          accessToken={config.mapboxToken}
+          style={config.mapboxStyle}
+          zoom={2}
+          center={locations['seattle']}
+          eventHandlers={{
+            load: () => {
+              expect(mapWrapper.state('loaded')).toBe(true);
+              expect(mapWrapper.find('.map-child').length).toBeGreaterThan(0);
+              done();
+            },
+          }}
+        >
+          <div className="map-child"></div>
+        </MapComponent>
+      );
     });
   });
 
