@@ -27,7 +27,7 @@ export default class Layer extends Component {
       map,
     } = this.context;
     // If map.style is null, parent map is unmounting.
-    if (!map || !map.layer) return;
+    if (!map || !map.style) return;
     map.removeLayer(this.id);
   }
   generateId = (name, type) => {

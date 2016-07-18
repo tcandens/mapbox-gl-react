@@ -79,6 +79,7 @@ describe('<Source/>', function () {
       );
       expect(addSourceSpy).toHaveBeenCalledWith('test', geoJSONSource);
     });
+
     it('should noop if data is empty', function () {
       const addSourceSpy = expect.spyOn(MapMock, 'addSource');
       const data = null;
@@ -92,6 +93,7 @@ describe('<Source/>', function () {
       );
       expect(addSourceSpy).toNotHaveBeenCalled();
     });
+
     it('should not render childen until source is added with data', function () {
       const sourceWrapper = mount((
         <SourceComponent name="test" data={null}>
@@ -101,6 +103,7 @@ describe('<Source/>', function () {
       );
       expect(sourceWrapper.find('.source-child').length).toBe(0);
     });
+
     it('should render children after source is added', function () {
       const sourceWrapper = mount((
         <SourceComponent name="test">
@@ -111,7 +114,10 @@ describe('<Source/>', function () {
       sourceWrapper.setState({ source: { type: 'invalid' } });
       expect(sourceWrapper.find('.source-child').length).toBe(1);
     });
-    it('should render multiple children (layers) into single node');
+
+    it('should render multiple children (layers) into single node', function () {
+
+    });
   });
 
   describe('Mutation', function () {
@@ -130,6 +136,7 @@ describe('<Source/>', function () {
       });
       expect(setDataSpy).toHaveBeenCalled();
     });
+
     it('should update source if data is url string');
   });
 

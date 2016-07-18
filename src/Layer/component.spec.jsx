@@ -8,123 +8,81 @@
   react/no-multi-comp: "off",
 */
 import React, { Component } from 'react';
-import MapComponent from '../Map';
-import SourceComponent from '../Source';
 import LayerComponent from './component';
 import { mount } from 'enzyme';
 import expect from 'expect';
 import point from 'turf-point';
-import config from '../../config.json';
+import Mapbox from 'mapbox-gl/dist/mapbox-gl';
+import MapboxMock from 'mapbox-gl-js-mock';
 
-class TestMap extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      renderChildren: true,
+describe('<Layer/>', function () {
+  let MapMock;
+  let SourceMock;
+  let context;
+  beforeEach('Setup', function () {
+    MapMock = new MapboxMock.Map({});
+    SourceMock = new Mapbox.GeoJSONSource({
       data: point([0, 0]),
+    });
+    context = {
+      context: {
+        map: MapMock,
+        source: SourceMock,
+        name: 'test',
+      },
     };
-  }
-  render() {
-    const {
-      eventHandlers,
-      children,
-    } = this.props;
-    return (
-      <MapComponent
-        accessToken={config.mapboxToken}
-        style={config.mapboxStyle}
-        center={[-122, 47]}
-        zoom={2}
-        eventHandlers={eventHandlers}
-      >
-        <SourceComponent name="test" data={this.state.data}>
-          {this.state.renderChildren ? children : null}
-        </SourceComponent>
-      </MapComponent>
-    );
-  }
-}
-
-describe.skip('<Layer/>', function () {
+  });
   describe('Mounting', function () {
-    it('should not mount outside of a <Source> component', function (done) {
+    it('should not mount outside of a <Source> component', function () {
       let layerWrapper;
       try {
         layerWrapper = mount(
-          <LayerComponent type="circle" paint={{ 'circle-color': 'red' }} />
+          <LayerComponent
+            type="circle"
+          />, {
+            context: {
+              map: null,
+              source: SourceMock,
+              name: 'test',
+            },
+          }
         );
       } catch (error) {
         layerWrapper = error;
       }
       expect(layerWrapper).toBeA(Error);
-      done();
     });
 
-    it('should add a layer to map', function (done) {
-      this.timeout(5000);
-      function continueTest(map) {
-        const layers = Object.keys(map.style._layers); // eslint-disable-line
-        const found = layers.find(layer => layer.match(/test-circle/));
-        expect(found).toExist();
-        done();
-      }
+    it('should add a layer to map', function () {
+      const addLayerSpy = expect.spyOn(MapMock, 'addLayer');
       mount(
-        <TestMap
-          eventHandlers={{
-            load: continueTest,
-          }}
-        >
-          <LayerComponent type="circle" paint={{ 'circle-color': 'red' }} />
-        </TestMap>
+        <LayerComponent type="circle" />,
+        context
       );
+      expect(addLayerSpy).toHaveBeenCalled();
     });
 
-    it('should add multiple layers to map', function (done) {
-      this.timeout(5000);
-      function continueTest(map) {
-        const layers = Object.keys(map.style._layers); // eslint-disable-line
-        const found = layers.find(layer => layer.match(/test-circle/));
-        expect(found).toExist();
-        done();
-      }
+    it('should create unique layer name to avoid collisions', function () {
+      const addLayerSpy = expect.spyOn(MapMock, 'addLayer');
       mount(
-        <TestMap
-          eventHandlers={{
-            load: continueTest,
-          }}
-        >
-          <LayerComponent type="circle" />
-          <LayerComponent type="circle" />
-        </TestMap>
+        <LayerComponent type="circle" />,
+        context
       );
+      const { id } = addLayerSpy.calls[0].arguments[0];
+      expect(id).toMatch(/test-circle-\d+/);
     });
   });
   describe('Mutation', function () {
   });
   describe('Unmounting', function () {
-    it('should remove layer from map', function (done) {
-      this.timeout(5000);
-      function continueTest(map) {
-        const layers = Object.keys(map.style._layers); // eslint-disable-line
-        const found = layers.find(layer => layer.match(/test-circle/));
-        expect(found).toNotExist();
-        done();
-      }
-      const mapWrapper = mount(
-        <TestMap
-          eventHandlers={{
-            load: (map) => {
-              mapWrapper.setState({
-                data: mapWrapper.state('data'),
-                renderChildren: false,
-              });
-              continueTest(map);
-            },
-          }}
-        >
-          <LayerComponent type="circle" />
-        </TestMap>
+    it('should remove layer from map', function () {
+      const removeLayerSpy = expect.spyOn(MapMock, 'removeLayer');
+      const layerWrapper = mount(
+        <LayerComponent type="circle" />,
+        context
       );
+      layerWrapper.unmount();
+      expect(removeLayerSpy).toHaveBeenCalled();
     });
   });
 });
