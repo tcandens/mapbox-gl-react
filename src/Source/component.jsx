@@ -38,9 +38,7 @@ export default class GeoJSONSource extends Component {
       data,
     } = this.props;
     if (!verifyData(data)) return;
-    const source = new Mapbox.GeoJSONSource({
-      data,
-    });
+    const source = new Mapbox.GeoJSONSource({ data });
     this.setState({ source });
     map.addSource(name, source);
   }

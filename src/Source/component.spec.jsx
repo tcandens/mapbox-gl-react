@@ -50,6 +50,7 @@ describe('<Source/>', function () {
       }
       expect(sourceWrapper).toBeA(Error);
     });
+
     it('should add source to map', function () {
       const addSourceSpy = expect.spyOn(MapMock, 'addSource');
       const data = point(locations['seattle']);
@@ -59,14 +60,24 @@ describe('<Source/>', function () {
       );
       expect(addSourceSpy).toHaveBeenCalledWith('test', geoJSONSource);
     });
-    it('should update state with source');
-    it.skip('should use data if it is a string as a url for source', function () {
+
+    it('should update state with source', function () {
+      const data = point(locations['seattle']);
+      const sourceWrapper = mount(
+        <SourceComponent name="test" data={data} />,
+        ContextMap
+      );
+      expect(sourceWrapper.state('source')).toExist();
+    });
+
+    it('should use data if it is a string as a url for source', function () {
       const addSourceSpy = expect.spyOn(MapMock, 'addSource');
       const data = 'https://test.source.json';
+      const geoJSONSource = new Mapbox.GeoJSONSource({ data });
       mount(
         <SourceComponent name="test" data={data} />, ContextMap
       );
-      expect(addSourceSpy).toHaveBeenCalledWith('test', data);
+      expect(addSourceSpy).toHaveBeenCalledWith('test', geoJSONSource);
     });
     it('should noop if data is empty', function () {
       const addSourceSpy = expect.spyOn(MapMock, 'addSource');
@@ -81,52 +92,56 @@ describe('<Source/>', function () {
       );
       expect(addSourceSpy).toNotHaveBeenCalled();
     });
+    it('should not render childen until source is added with data', function () {
+      const sourceWrapper = mount((
+        <SourceComponent name="test" data={null}>
+          <div className="source-child" />
+        </SourceComponent>),
+        ContextMap
+      );
+      expect(sourceWrapper.find('.source-child').length).toBe(0);
+    });
+    it('should render children after source is added', function () {
+      const sourceWrapper = mount((
+        <SourceComponent name="test">
+          <div className="source-child" />
+        </SourceComponent>),
+        ContextMap
+      );
+      sourceWrapper.setState({ source: { type: 'invalid' } });
+      expect(sourceWrapper.find('.source-child').length).toBe(1);
+    });
+    it('should render multiple children (layers) into single node');
   });
 
-  describe.skip('Mutation', function () {
-    it('should update source from data props', function (done) {
-      this.timeout(5000);
-      const mapWrapper = mount(
-        <TestMapWithSource
-          eventHandlers={{
-            load: (map) => {
-              const newDatapoint = point([-122, 47]);
-              mapWrapper.setState({
-                data: newDatapoint,
-              });
-              const source = map.getSource('test');
-              expect(source._data).toContain(newDatapoint); // eslint-disable-line
-              done();
-            },
-          }}
-        />
+  describe('Mutation', function () {
+    it('should update source from data props', function () {
+      const sourceWrapper = mount(
+        <SourceComponent name="test" data={point(locations['seattle'])} />,
+        ContextMap
       );
+      sourceWrapper.setProps({
+        data: point(locations['seattle']),
+      });
+      const source = sourceWrapper.state('source');
+      const setDataSpy = expect.spyOn(source, 'setData');
+      sourceWrapper.setProps({
+        data: point(locations['ballard']),
+      });
+      expect(setDataSpy).toHaveBeenCalled();
     });
     it('should update source if data is url string');
   });
 
-  describe.skip('Unmounting', function () {
-    it('should remove source from map on componentWillUnmount', function (done) {
-      this.timeout(5000);
-      function continueTest(map) {
-        const source = map.getSource('test');
-        expect(source).toNotExist();
-        done();
-      }
-      const MapWrapper = mount(
-        <TestMap
-          eventHandlers={{
-            load: (map) => {
-              MapWrapper.setState({
-                mountChildren: false,
-              });
-              continueTest(map);
-            },
-          }}
-        >
-          <SourceComponent name="test" data={point([-122, 47])} />
-        </TestMap>
+  describe('Unmounting', function () {
+    it('should remove source from map on componentWillUnmount', function () {
+      const removeSourceSpy = expect.spyOn(MapMock, 'removeSource');
+      const sourceWrapper = mount(
+        <SourceComponent name="test" data={point(locations['seattle'])} />,
+        ContextMap
       );
+      sourceWrapper.unmount();
+      expect(removeSourceSpy).toHaveBeenCalled();
     });
   });
 });
