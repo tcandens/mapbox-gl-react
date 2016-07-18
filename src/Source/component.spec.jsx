@@ -7,109 +7,83 @@
   react/prop-types: "off",
   react/no-multi-comp: "off",
 */
-import React, { Component } from 'react';
-import MapComponent from '../Map';
+import React from 'react';
 import SourceComponent from './component';
 import { mount } from 'enzyme';
 import expect from 'expect';
 import point from 'turf-point';
-import config from '../../config.json';
+import Mapbox from 'mapbox-gl/dist/mapbox-gl';
+import MapboxMock from 'mapbox-gl-js-mock';
 
-/**
- * Higher Order Test Components
- */
-class TestMap extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mountChildren: true,
-    };
-  }
-  render() {
-    const {
-      children,
-      ...custom,
-    } = this.props;
-    return (
-      <MapComponent
-        accessToken={config.mapboxToken}
-        style={config.mapboxStyle}
-        center={[-122, 47]}
-        zoom={2}
-        {...custom}
-      >
-        {this.state.mountChildren && children}
-      </MapComponent>
-    );
-  }
-}
-class TestMapWithSource extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: point([42, 42]),
-    };
-  }
-  render() {
-    return (
-      <TestMap
-        {...this.props}
-      >
-        <SourceComponent name="test" data={this.state.data} />
-      </TestMap>
-    );
-  }
-}
+const locations = {
+  'seattle': [-122.3372, 47.6111],
+  'ballard': [-122.3847, 47.6683],
+  'new york': [-73.9744, 40.7712],
+};
 
-describe.skip('<Source/>', function () {
+describe('<Source/>', function () {
+  let MapMock;
+  let ContextMap;
+  beforeEach('Create fresh Mapbox spy', function () {
+    MapMock = new MapboxMock.Map({});
+    ContextMap = {
+      context: {
+        map: MapMock,
+      },
+    };
+  });
+
   describe('Mounting', function () {
     it('should only work inside a map', function () {
-      let TestSource;
+      let sourceWrapper;
       try {
-        TestSource = mount(
-          <SourceComponent name="test" data={point([-122, 47])} />
+        sourceWrapper = mount(
+          <SourceComponent />,
+          {
+            context: {
+              map: null,
+            },
+          }
         );
       } catch (error) {
-        TestSource = error;
+        sourceWrapper = error;
       }
-      expect(TestSource).toBeA(Error);
+      expect(sourceWrapper).toBeA(Error);
     });
-    it('should noop if data is empty', function (done) {
-      function continueTest(map) {
-        const foundSource = map.getSource('test');
-        expect(foundSource).toNotExist();
-        done();
-      }
+    it('should add source to map', function () {
+      const addSourceSpy = expect.spyOn(MapMock, 'addSource');
+      const data = point(locations['seattle']);
+      const geoJSONSource = new Mapbox.GeoJSONSource({ data });
       mount(
-        <TestMap
-          eventHandlers={{
-            load: continueTest,
-          }}
-        >
-          <SourceComponent name="test" data={null} />
-        </TestMap>
+        <SourceComponent name="test" data={data} />, ContextMap
       );
+      expect(addSourceSpy).toHaveBeenCalledWith('test', geoJSONSource);
     });
-    it('should add source to map', function (done) {
-      this.timeout(5000);
-      function continueTest(map) {
-        const source = map.getSource('test');
-        expect(source).toExist();
-        done();
-      }
+    it('should update state with source');
+    it.skip('should use data if it is a string as a url for source', function () {
+      const addSourceSpy = expect.spyOn(MapMock, 'addSource');
+      const data = 'https://test.source.json';
       mount(
-        <TestMap
-          eventHandlers={{
-            load: continueTest,
-          }}
-        >
-          <SourceComponent name="test" data={point([-122, 47])} />
-        </TestMap>
+        <SourceComponent name="test" data={data} />, ContextMap
       );
+      expect(addSourceSpy).toHaveBeenCalledWith('test', data);
+    });
+    it('should noop if data is empty', function () {
+      const addSourceSpy = expect.spyOn(MapMock, 'addSource');
+      const data = null;
+      mount(
+        <SourceComponent name="test" data={data} />,
+        {
+          context: {
+            map: MapMock,
+          },
+        }
+      );
+      expect(addSourceSpy).toNotHaveBeenCalled();
     });
   });
 
-  describe('Mutation', function () {
+  describe.skip('Mutation', function () {
     it('should update source from data props', function (done) {
       this.timeout(5000);
       const mapWrapper = mount(
@@ -131,7 +105,7 @@ describe.skip('<Source/>', function () {
     it('should update source if data is url string');
   });
 
-  describe('Unmounting', function () {
+  describe.skip('Unmounting', function () {
     it('should remove source from map on componentWillUnmount', function (done) {
       this.timeout(5000);
       function continueTest(map) {

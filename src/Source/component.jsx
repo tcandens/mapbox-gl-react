@@ -1,22 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Mapbox from 'mapbox-gl/dist/mapbox-gl';
-import isEqual from 'lodash/isEqual';
 import isArray from 'lodash/isArray';
-const diff = (left, right) => !isEqual(left, right);
-
-export function verifyData(data, oldData) {
-  if (oldData && typeof data === 'object') {
-    if (diff(data, oldData) && data !== {}) {
-      return true;
-    }
-    return false;
-  } else if (typeof data === 'object' && data !== {}) {
-    return true;
-  } else if (typeof data === 'string' && data !== '') {
-    return true;
-  }
-  return false;
-}
+import { verifyData } from './helpers';
 
 export default class GeoJSONSource extends Component {
   state = {
