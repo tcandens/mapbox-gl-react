@@ -112,11 +112,18 @@ describe('<Source/>', function () {
         ContextMap
       );
       sourceWrapper.setState({ source: { type: 'invalid' } });
-      expect(sourceWrapper.find('.source-child').length).toBe(1);
+      expect(sourceWrapper.render().children().length).toBe(1);
     });
 
     it('should render multiple children (layers) into single node', function () {
-
+      const sourceWrapper = mount((
+        <SourceComponent name="test" data={point(locations['seattle'])}>
+          <div id="source-child-1" />
+          <div id="source-child-2" />
+        </SourceComponent>),
+        ContextMap
+      );
+      expect(sourceWrapper.render().find('[data-mapbox-layer-group=true]').length).toBe(1);
     });
   });
 

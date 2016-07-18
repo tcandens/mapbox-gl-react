@@ -100,6 +100,7 @@ describe('<Map/>', function () {
       expect(flyToSpy).toHaveBeenCalled();
     });
     it('should add loaded state on map#load and render children', function (done) {
+      // might need a timeout greater than 2000ms
       const mapWrapper = mount(
         <MapComponent
           accessToken={config.mapboxToken}

@@ -48,7 +48,7 @@ export default class GeoJSONSource extends Component {
   render = () => {
     if (this.state.source) {
       if (this.props.children && isArray(this.props.children)) {
-        return <div>{this.props.children}</div>;
+        return <div data-mapbox-layer-group>{this.props.children}</div>;
       }
       return this.props.children || null;
     }
