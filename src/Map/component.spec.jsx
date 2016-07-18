@@ -85,17 +85,28 @@ describe('<Map/>', function () {
     });
   });
 
+  describe('Morphing props', function () {
+    it('should transition map to new center', function () {
+      // Spy on Mapbox method used to transition center of camera,
+      // Could change later, e.g. 'jumpTo', 'panTo', etc...
+      const moveMethod = 'flyTo';
+      const flyToSpy = expect.spyOn(MapMock, moveMethod);
+      const mapWrapper = mount(
+        <TestMap
+          center={locations['seattle']}
+        />
+      );
+      mapWrapper.setProps({ center: locations['ballard'] });
+      expect(flyToSpy).toHaveBeenCalled();
+    });
+  });
+
   describe('Unmounting', function () {
     it('should call map#remove on componentWillUnmount', function () {
       const removeSpy = expect.spyOn(MapMock, 'remove').andCallThrough();
       const mapWrapper = mount(<TestMap />);
       mapWrapper.unmount();
       expect(removeSpy).toHaveBeenCalled();
-    });
-  });
-
-  describe('Morphing props', function () {
-    it('should transition map to new center', function () {
     });
   });
 });
