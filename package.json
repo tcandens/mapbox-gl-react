@@ -2,10 +2,11 @@
   "name": "mapbox-gl-react",
   "version": "0.0.1",
   "description": "React components for Mapbox-gl-js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tcandens/mapbox-gl-react.git"
-  },
+  "repository": "tcandens/mapbox-gl-react",
+  "files": [
+    "lib",
+    "src",
+  ],
   "main": "src/index.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
@@ -31,6 +32,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
+    "del": "^2.2.1",
     "enzyme": "^2.4.1",
     "es6-promise": "^3.2.1",
     "eslint": "^2.10.2",
@@ -42,6 +44,8 @@
     "expect": "^1.20.2",
     "expect-element": "^1.1.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-env": "^0.4.0",
     "gulp-util": "^3.0.7",
     "isomorphic-fetch": "^2.2.1",
     "isparta-loader": "^2.0.0",

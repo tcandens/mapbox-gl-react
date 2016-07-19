@@ -5,9 +5,13 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('./webpack.config.js');
 const Karma = require('karma');
+const merge = require('webpack-merge');
+const babel = require('gulp-babel');
+const env = require('gulp-env');
+const del = require('del');
 
 gulp.task('examples', () => {
-  const config = Object.assign({}, webpackConfig, {
+  const config = merge(webpackConfig, {
     devtool: 'cheap-module-eval-source-map',
     output: {
       path: '/__build__',
@@ -49,5 +53,20 @@ gulp.task('tdd', (done) => {
     reporters: ['mocha'],
   }, done).start();
 });
+
+gulp.task('build:cjs', ['clean:cjs'], () => {
+  env({
+    BABEL_ENV: 'commonjs',
+  });
+
+  return gulp.src('src/**/*')
+    .pipe(babel())
+    .pipe(gulp.dest('lib'));
+});
+
+gulp.task('clean:cjs', () => del('lib'));
+
+gulp.task('clean', ['clean:cjs']);
+gulp.task('build', ['build:cjs']);
 
 gulp.task('default', ['examples']);
