@@ -5,7 +5,7 @@
   "repository": "tcandens/mapbox-gl-react",
   "files": [
     "lib",
-    "src",
+    "src"
   ],
   "main": "src/index.js",
   "scripts": {
