@@ -54,6 +54,16 @@ gulp.task('tdd', (done) => {
   }, done).start();
 });
 
+gulp.task('build:es', ['clean:es'], () => {
+  env({
+    BABEL_ENV: 'es',
+  });
+
+  return gulp.src('src/**/*')
+    .pipe(babel())
+    .pipe(gulp.dest('es'));
+});
+
 gulp.task('build:cjs', ['clean:cjs'], () => {
   env({
     BABEL_ENV: 'commonjs',
@@ -65,6 +75,7 @@ gulp.task('build:cjs', ['clean:cjs'], () => {
 });
 
 gulp.task('clean:cjs', () => del('lib'));
+gulp.task('clean:es', () => del('es'));
 
 gulp.task('clean', ['clean:cjs']);
 gulp.task('build', ['build:cjs']);
