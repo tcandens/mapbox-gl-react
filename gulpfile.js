@@ -77,7 +77,7 @@ gulp.task('build:cjs', ['clean:cjs'], () => {
 gulp.task('clean:cjs', () => del('lib'));
 gulp.task('clean:es', () => del('es'));
 
-gulp.task('clean', ['clean:cjs']);
-gulp.task('build', ['build:cjs']);
+gulp.task('clean', ['clean:cjs', 'clean:es']);
+gulp.task('build', ['build:cjs', 'build:es']);
 
 gulp.task('default', ['examples']);
