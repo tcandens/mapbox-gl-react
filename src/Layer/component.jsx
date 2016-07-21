@@ -17,7 +17,6 @@ export default class Layer extends Component {
     }
     this.generateId(name, type);
     if (!map.getLayer(this.id)) {
-      console.log(style);
       this.createLayer(type, style);
     }
   }
@@ -31,7 +30,7 @@ export default class Layer extends Component {
   }
   id = '';
   generateId = (name, type) => {
-    this.id = uniqueId(`$MAPBOX-GL-REACT_{name}-${type}-`);
+    this.id = uniqueId(`MAPBOX-GL-REACT_${name}-${type}-`);
   }
   createLayer = (type, style) => {
     const {
