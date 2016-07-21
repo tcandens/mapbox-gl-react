@@ -1,6 +1,6 @@
 {
   "name": "mapbox-gl-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React components for Mapbox-gl-js",
   "repository": "tcandens/mapbox-gl-react",
   "files": [
@@ -12,7 +12,8 @@
   "jsnext:main": "es/index.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
-    "test": "./node_modules/.bin/gulp test"
+    "test": "./node_modules/.bin/gulp test",
+    "prepublish": "./node_modules/.bin/gulp build"
   },
   "keywords": [
     "react",
