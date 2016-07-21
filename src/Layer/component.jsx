@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import uniqueId from 'lodash/uniqueId';
 
 export default class Layer extends Component {
-  id = '';
   componentDidMount = () => {
     const {
       map,
@@ -18,10 +17,10 @@ export default class Layer extends Component {
     }
     this.generateId(name, type);
     if (!map.getLayer(this.id)) {
-      this.createLayer(type, ...style);
+      console.log(style);
+      this.createLayer(type, style);
     }
   }
-  shouldComponentUpdate = () => false;
   componentWillUnmount = () => {
     const {
       map,
@@ -30,10 +29,11 @@ export default class Layer extends Component {
     if (!map || !map.style) return;
     map.removeLayer(this.id);
   }
+  id = '';
   generateId = (name, type) => {
-    this.id = uniqueId(`${name}-${type}-`);
+    this.id = uniqueId(`$MAPBOX-GL-REACT_{name}-${type}-`);
   }
-  createLayer = (type, ...style) => {
+  createLayer = (type, style) => {
     const {
       map,
       name,

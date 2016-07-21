@@ -36,7 +36,7 @@ export default class CollectionSourceExample extends Component {
             cluster: true,
           }}
         >
-          <Layer type="circle" paint={{ 'circle-color': 'blue' }} />
+          <Layer type="circle" paint={{ 'circle-color': 'red' }} layout={{ visibility: 'visible' }} />
         </CollectionSource>
       </MapComponent>
     );
