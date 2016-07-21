@@ -1,6 +1,6 @@
 {
   "name": "mapbox-gl-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React components for Mapbox-gl-js",
   "repository": "tcandens/mapbox-gl-react",
   "files": [
@@ -84,6 +84,7 @@
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-hot-loader": "^3.0.0-beta.2",
-    "turf-featurecollection": "^1.0.1"
+    "turf-featurecollection": "^1.0.1",
+    "turf-point": "^2.0.1"
   }
 }
