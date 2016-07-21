@@ -18,9 +18,7 @@ export default class BaseComponentExample extends Component {
     setData();
     this.interval = setInterval(setData, 2000);
     fetch('https://data.seattle.gov/resource/mags-97de.json')
-      .then(response => {
-        return response.json();
-      })
+      .then(response => response.json())
       .then(data => {
         const geoJSON = {
           type: 'FeatureCollection',
@@ -47,8 +45,7 @@ export default class BaseComponentExample extends Component {
           accessToken={config.mapboxToken}
           style={config.mapboxStyle}
           center={[-122.3372, 47.6111]}
-          pitch={0}
-          zoom={2}
+          zoom={0}
           eventHandlers={{
             load: (map) => {
               window.MAPBOX_MAP = map;
@@ -57,15 +54,7 @@ export default class BaseComponentExample extends Component {
         >
           <Source name="test" data={this.state.data}>
             <Layer type="circle" paint={{ 'circle-color': 'red' }} />
-            <Layer type="circle" paint={{ 'circle-color': 'blue' }} />
-            <Layer type="circle" paint={{ 'circle-color': 'blue' }} />
           </Source>
-          {/* <Source name="permits" data={this.state.permits}>
-            <Layer type="circle"
-            paint={{ 'circle-color': 'green' }}
-            filter={['>=', 'value', 3000]}
-            />
-          </Source>*/}
         </MapComponent>
       </div>
     );

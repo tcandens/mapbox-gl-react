@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import SourceComponent from '../Source';
 import at from 'lodash/at';
-
 import point from 'turf-point';
 import featureCollection from 'turf-featurecollection';
 
@@ -22,6 +21,7 @@ export default class CollectionSource extends Component {
       collection,
       coordinates,
       properties,
+      options,
     } = this.props;
     const [
       longitudeKey,
@@ -37,6 +37,7 @@ export default class CollectionSource extends Component {
       <SourceComponent
         name={name}
         data={geoJSON}
+        options={options}
       >
         {children}
       </SourceComponent>
@@ -50,6 +51,7 @@ CollectionSource.propTypes = {
   coordinates: PropTypes.array.isRequired,
   properties: PropTypes.array,
   children: PropTypes.element,
+  options: PropTypes.object,
 };
 CollectionSource.contextTypes = {
   map: PropTypes.object,

@@ -36,9 +36,13 @@ export default class GeoJSONSource extends Component {
     const {
       name,
       data,
+      options,
     } = this.props;
     if (!verifyData(data)) return;
-    const source = new Mapbox.GeoJSONSource({ data });
+    const source = new Mapbox.GeoJSONSource({
+      data,
+      ...options,
+    });
     this.setState({ source });
     map.addSource(name, source);
   }
@@ -67,6 +71,12 @@ GeoJSONSource.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
+  options: PropTypes.shape({
+    maxzoom: PropTypes.number,
+    cluster: PropTypes.boolean,
+    clusterRadius: PropTypes.number,
+    clusterMaxZoom: PropTypes.number,
+  }),
 };
 GeoJSONSource.contextTypes = {
   map: PropTypes.object,

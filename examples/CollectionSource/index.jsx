@@ -20,7 +20,7 @@ export default class CollectionSourceExample extends Component {
         style={config.mapboxStyle}
         center={[-122.3372, 47.6111]}
         pitch={0}
-        zoom={2}
+        zoom={12}
         eventHandlers={{
           load: map => {
             window.MAPBOX_MAP = map;
@@ -32,6 +32,9 @@ export default class CollectionSourceExample extends Component {
           collection={this.state.data}
           coordinates={['longitude', 'location.latitude']}
           properties={['value']}
+          options={{
+            cluster: true,
+          }}
         >
           <Layer type="circle" paint={{ 'circle-color': 'blue' }} />
         </CollectionSource>
