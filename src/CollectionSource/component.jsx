@@ -8,9 +8,9 @@ export default class CollectionSource extends Component {
   getChildContext = () => ({
     map: this.context.map,
   })
-  selectProperties = (item, properties) => (
+  selectProperties = (item, properties = []) => (
     properties.reduce((previous, current) => {
-      previous[current] = properties[current]; // eslint-disable-line
+      previous[current] = item[current]; // eslint-disable-line
       return previous;
     }, {})
   )
@@ -30,7 +30,7 @@ export default class CollectionSource extends Component {
     const geoJSON = featureCollection(collection.map(item => (
       point(
         [at(item, longitudeKey), at(item, latitudeKey)],
-        this.selectProperties(collection, properties)
+        this.selectProperties(item, properties)
       )
     )));
     return (

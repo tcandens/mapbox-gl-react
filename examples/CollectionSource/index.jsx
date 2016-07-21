@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MapComponent, { CollectionSource, Layer } from '../../src/';
+import MapComponent, { CollectionSource, Layer, query } from '../../src/';
 import config from '../../config.json';
 
 import testCollection from '../../src/CollectionSource/testCollection.json';
@@ -24,6 +24,10 @@ export default class CollectionSourceExample extends Component {
         eventHandlers={{
           load: map => {
             window.MAPBOX_MAP = map;
+          },
+          click: (map, event) => {
+            const features = query(map).renderedWithin(5, event);
+            console.log(features);
           },
         }}
       >
