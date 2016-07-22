@@ -4,6 +4,7 @@ import Layer from '../Layer';
 export default function CirclesLayer(props, context) {
   const {
     children,
+    filter,
     ...paintProps,
   } = props;
   const paint = Object.keys(paintProps).reduce((previous, current) => {
@@ -14,10 +15,10 @@ export default function CirclesLayer(props, context) {
     <Layer
       type="circle"
       paint={{ ...paint }}
+      filter={filter}
     />
   );
 }
-
 CirclesLayer.propTypes = {
   blur: PropTypes.number,
   color: PropTypes.string,

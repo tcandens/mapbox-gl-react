@@ -4,6 +4,7 @@ import Layer from '../Layer';
 export default function SymbolsLayer(props, context) {
   const {
     children,
+    filter,
     image,
     size,
     color,
@@ -28,6 +29,7 @@ export default function SymbolsLayer(props, context) {
       type="symbol"
       layout={mergedLayout}
       paint={mergedPaint}
+      filter={filter}
     />
   );
 }

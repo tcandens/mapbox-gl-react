@@ -50,7 +50,6 @@ CollectionSource.propTypes = {
   collection: PropTypes.array.isRequired,
   coordinates: PropTypes.array.isRequired,
   properties: PropTypes.array,
-  children: PropTypes.element,
   options: PropTypes.object,
 };
 CollectionSource.contextTypes = {

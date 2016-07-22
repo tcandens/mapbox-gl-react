@@ -76,6 +76,12 @@ export default class LargeExample extends Component {
             properties={['hundred_block_location', 'event_clearance_group', 'at_scene_time']}
           >
             <Circles color="coral" radius={5} blur={0.8} opacity={0.7} />
+            <Symbols
+              image="hospital-11"
+              filter={[
+                '==', 'event_clearance_group', 'BEHAVIORAL HEALTH',
+              ]}
+            />
           </CollectionSource>
           <CollectionSource
             name="homicides"
