@@ -10,14 +10,15 @@ export default class Layer extends Component {
     } = this.context;
     const {
       type,
-      ...style,
+      paint,
+      layout,
     } = this.props;
     if (!source) {
       throw new Error('Layer must be used inside a Source component.');
     }
     this.generateId(name, type);
     if (!map.getLayer(this.id)) {
-      this.createLayer(type, style);
+      this.createLayer(type, paint, layout);
     }
   }
   componentWillUnmount = () => {
@@ -32,7 +33,7 @@ export default class Layer extends Component {
   generateId = (name, type) => {
     this.id = uniqueId(`MAPBOX-GL-REACT_${name}-${type}-`);
   }
-  createLayer = (type, style) => {
+  createLayer = (type, paint, layout) => {
     const {
       map,
       name,
@@ -41,7 +42,8 @@ export default class Layer extends Component {
       id: this.id,
       source: name,
       type,
-      ...style,
+      paint,
+      layout,
     });
   }
   render = () => null;
@@ -57,4 +59,8 @@ Layer.propTypes = {
   paint: PropTypes.object,
   layout: PropTypes.object,
   filter: PropTypes.object,
+};
+Layer.defaultProps = {
+  paint: {},
+  layout: {},
 };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MapComponent, { CollectionSource, Circles, query } from '../../src';
+import MapComponent, { CollectionSource, Circles, Symbols, query } from '../../src';
 import config from '../../config.json';
 
 const assaultsEndpoint = 'https://data.seattle.gov/resource/pu5n-trf4.json?$where=at_scene_time>\'2016-01-07T12:00:00\'&initial_type_group=ASSAULTS';
@@ -56,7 +56,7 @@ export default class LargeExample extends Component {
         {!!this.state.viewing.length && this.viewing}
         <MapComponent
           accessToken={config.mapboxToken}
-          style={config.mapboxStyle}
+          style="mapbox://styles/mapbox/light-v9"
           center={[-122.3372, 47.6111]}
           zoom={12}
           eventHandlers={{
@@ -75,7 +75,7 @@ export default class LargeExample extends Component {
             coordinates={['longitude', 'latitude']}
             properties={['hundred_block_location', 'event_clearance_group', 'at_scene_time']}
           >
-            <Circles color="blue" />
+            <Circles color="coral" radius={5} blur={0.8} opacity={0.7} />
           </CollectionSource>
           <CollectionSource
             name="homicides"
@@ -83,7 +83,7 @@ export default class LargeExample extends Component {
             coordinates={['longitude', 'latitude']}
             properties={['hundred_block_location', 'event_clearance_group', 'at_scene_time']}
           >
-            <Circles color="red" radius={12} />
+            <Symbols image="cemetery-15" size={1} />
           </CollectionSource>
         </MapComponent>
       </section>
