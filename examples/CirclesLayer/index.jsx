@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import MapComponent, { CollectionSource, Layer, query } from '../../src/';
+import MapComponent, { CollectionSource, Circles, query } from '../../src/';
 import config from '../../config.json';
 
 import testCollection from '../../src/CollectionSource/testCollection.json';
 
-export default class CollectionSourceExample extends Component {
+export default class CirclesLayerExample extends Component {
   state = {
     data: [],
   }
@@ -18,7 +18,7 @@ export default class CollectionSourceExample extends Component {
       <MapComponent
         accessToken={config.mapboxToken}
         style={config.mapboxStyle}
-        center={[-122.3372, 47.6111]}
+        center={[-122.3372, 47.611]}
         pitch={0}
         zoom={12}
         eventHandlers={{
@@ -34,9 +34,10 @@ export default class CollectionSourceExample extends Component {
           properties={['value']}
           options={{
             cluster: true,
+            clusterRadius: 20,
           }}
         >
-          <Layer type="circle" paint={{ 'circle-color': 'red' }} layout={{ visibility: 'visible' }} />
+          <Circles color="red" blur={0.8} radius={15} />
         </CollectionSource>
       </MapComponent>
     );

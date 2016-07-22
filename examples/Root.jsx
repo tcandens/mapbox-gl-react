@@ -4,6 +4,7 @@ import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import App from './App.jsx';
 import BaseComponents from './BaseComponents';
 import CollectionSourceExample from './CollectionSource';
+import CirclesLayerExample from './CirclesLayer';
 
 export default function Root() {
   return (
@@ -11,6 +12,7 @@ export default function Root() {
       <Route path="/" component={App}>
         <IndexRoute component={BaseComponents} />
         <Route path="/collectionSource" component={CollectionSourceExample} />
+        <Route path="/circlesLayer" component={CirclesLayerExample} />
       </Route>
     </Router>
   );
