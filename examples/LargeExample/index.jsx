@@ -75,7 +75,20 @@ export default class LargeExample extends Component {
             coordinates={['longitude', 'latitude']}
             properties={['hundred_block_location', 'event_clearance_group', 'at_scene_time']}
           >
-            <Circles color="coral" radius={5} blur={0.8} opacity={0.7} />
+            <Circles
+              color={{
+                property: 'event_clearance_group',
+                stops: [
+                ['DISTURBANCES', 'orange'],
+                ['ROBBERY', 'red'],
+                ['ASSAULTS', 'coral'],
+                ['SHOPLIFTING', 'gray'],
+                ],
+              }}
+              radius={5}
+              blur={0.8}
+              opacity={0.5}
+            />
             <Symbols
               image="hospital-11"
               filter={[

@@ -21,8 +21,14 @@ export default function CirclesLayer(props, context) {
 }
 CirclesLayer.propTypes = {
   blur: PropTypes.number,
-  color: PropTypes.string,
-  radius: PropTypes.number,
+  color: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
+  radius: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.number,
+  ]),
   opacity: PropTypes.number,
   translate: PropTypes.array,
 };
