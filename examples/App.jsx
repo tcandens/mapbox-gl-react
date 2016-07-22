@@ -9,6 +9,7 @@ export default function App({ children }) {
     '/collectionSource': 'Collection Source',
     '/circlesLayer': 'Circles Layer',
     '/queries': 'Queries',
+    '/largeExample': 'Large Example',
   };
   const routeLinks = Object.keys(routes).map((route, index) => (
     <Link to={route} key={index}>{routes[route]}</Link>
