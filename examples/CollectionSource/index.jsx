@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MapComponent, { CollectionSource, Layer, query } from '../../src/';
+import MapComponent, { CollectionSource, Layer } from '../../src/';
 import config from '../../config.json';
 
 import testCollection from '../../src/CollectionSource/testCollection.json';
