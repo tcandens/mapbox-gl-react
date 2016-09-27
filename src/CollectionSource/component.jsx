@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import SourceComponent from '../Source';
-import at from 'lodash/at';
+import at from 'lodash.at';
 import point from 'turf-point';
 import featureCollection from 'turf-featurecollection';
 

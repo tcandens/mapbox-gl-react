@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Mapbox from 'mapbox-gl/dist/mapbox-gl';
-import isEqual from 'lodash/isEqual';
+import isEqual from 'lodash.isequal';
 const diff = (left, right) => !isEqual(left, right);
 
 import 'mapbox-gl/dist/mapbox-gl.css';

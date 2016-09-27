@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from 'lodash.uniqueid';
 
 export default class Layer extends Component {
   componentDidMount = () => {

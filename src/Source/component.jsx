@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Mapbox from 'mapbox-gl/dist/mapbox-gl';
-import isArray from 'lodash/isArray';
+import isArray from 'lodash.isarray';
 import { verifyData } from './helpers';
 
 export default class GeoJSONSource extends Component {

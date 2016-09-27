@@ -68,7 +68,9 @@
     "mocha": "^2.5.3",
     "node-sass": "^3.8.0",
     "null-loader": "^0.1.1",
+    "react": "^15.3.2",
     "react-addons-test-utils": "^15.2.1",
+    "react-dom": "^15.3.2",
     "react-router": "^2.5.2",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
@@ -79,10 +81,14 @@
     "webpack-merge": "^0.14.0"
   },
   "dependencies": {
-    "lodash": "^4.13.1",
+    "lodash.at": "^4.6.0",
+    "lodash.isarray": "^4.0.0",
+    "lodash.isempty": "^4.4.0",
+    "lodash.isequal": "^4.4.0",
+    "lodash.isobject": "^3.0.2",
+    "lodash.isstring": "^4.0.1",
+    "lodash.uniqueid": "^4.0.1",
     "mapbox-gl": "^0.20.1",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
     "react-hot-loader": "^3.0.0-beta.2",
     "turf-featurecollection": "^1.0.1",
     "turf-point": "^2.0.1"
