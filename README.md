@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/tcandens/mapbox-gl-react.svg?style=svg)](https://circleci.com/gh/tcandens/mapbox-gl-react)
+
 # Mapbox-gl-js React Components
 This library hopes to make [Mapbox-gl-js](https://www.mapbox.com/mapbox-gl-js/) easy to use while maintaining its
 API with the the power of React's declarative composability and higher order components.
