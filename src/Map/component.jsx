@@ -64,7 +64,10 @@ export default class Map extends Component {
     this.map.remove();
   }
   updateView = ({ center, ...view }) => {
-    this.map.flyTo({
+    const {
+      moveToMethod,
+    } = this.props.options;
+    this.map[moveToMethod]({
       center,
       ...view,
     });
@@ -86,7 +89,13 @@ Map.defaultProps = {
   eventHandlers: {},
   bearing: 0,
   pitch: 0,
-  containerStyle: {},
+  containerStyle: {
+    height: '100%',
+    width: '100%',
+  },
+  options: {
+    moveToMethod: 'flyTo',
+  },
 };
 Map.propTypes = {
   accessToken: PropTypes.string.isRequired,

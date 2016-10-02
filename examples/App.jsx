@@ -10,6 +10,7 @@ export default function App({ children }) {
     '/circlesLayer': 'Circles Layer',
     '/queries': 'Queries',
     '/largeExample': 'Large Example',
+    '/moveToMethod': 'MoveToMethods',
   };
   const routeLinks = Object.keys(routes).map((route, index) => (
     <Link to={route} key={index}>{routes[route]}</Link>
