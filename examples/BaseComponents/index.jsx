@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import MapComponent, { Source, Layer } from '../../src/';
+import MapComponent, { Source, Layer, Reticle } from '../../src/';
 import config from '../../config.json';
 import point from 'turf-point';
+
+import './style.sass';
 
 export default class BaseComponentExample extends Component {
   state = {
@@ -45,15 +47,19 @@ export default class BaseComponentExample extends Component {
           accessToken={config.mapboxToken}
           style={config.mapboxStyle}
           center={[-122.3372, 47.6111]}
-          zoom={0}
+          zoom={2}
           eventHandlers={{
             load: (map) => {
               window.MAPBOX_MAP = map;
             },
           }}
         >
+          <Reticle className="reticle-tester" />
           <Source name="test" data={this.state.data}>
             <Layer type="circle" paint={{ 'circle-color': 'red' }} />
+          </Source>
+          <Source name="permits" data={this.state.permits}>
+            <Layer type="circle" paint={{ 'circle-color': 'purple' }} />
           </Source>
         </MapComponent>
       </div>
