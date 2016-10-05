@@ -5,8 +5,7 @@ export default class Layer extends Component {
   componentDidMount = () => {
     const {
       map,
-      source,
-      name,
+      sourceName,
     } = this.context;
     const {
       type,
@@ -14,10 +13,10 @@ export default class Layer extends Component {
       layout,
       filter,
     } = this.props;
-    if (!source) {
+    if (!sourceName) {
       throw new Error('Layer must be used inside a Source component.');
     }
-    this.generateId(name, type);
+    this.generateId(sourceName, type);
     if (!map.getLayer(this.id)) {
       this.createLayer(type, paint, layout, filter);
     }
@@ -37,11 +36,11 @@ export default class Layer extends Component {
   createLayer = (type, paint, layout, filter) => {
     const {
       map,
-      name,
+      sourceName,
     } = this.context;
     map.addLayer({
       id: this.id,
-      source: name,
+      source: sourceName,
       type,
       paint,
       layout,
@@ -55,8 +54,7 @@ export default class Layer extends Component {
 
 Layer.contextTypes = {
   map: PropTypes.object,
-  name: PropTypes.string,
-  source: PropTypes.object,
+  sourceName: PropTypes.string,
 };
 Layer.propTypes = {
   type: PropTypes.oneOf(['symbol', 'circle']).isRequired,

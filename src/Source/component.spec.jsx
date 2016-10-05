@@ -12,7 +12,6 @@ import SourceComponent from './component';
 import { mount } from 'enzyme';
 import expect from 'expect';
 import point from 'turf-point';
-import Mapbox from 'mapbox-gl/dist/mapbox-gl';
 import MapboxMock from 'mapbox-gl-js-mock';
 
 const locations = {
@@ -23,10 +22,10 @@ const locations = {
 
 describe('<Source/>', function () {
   let MapMock;
-  let ContextMap;
+  let context;
   beforeEach('Create fresh Mapbox spy', function () {
     MapMock = new MapboxMock.Map({});
-    ContextMap = {
+    context = {
       context: {
         map: MapMock,
       },
@@ -54,28 +53,34 @@ describe('<Source/>', function () {
     it('should add source to map', function () {
       const addSourceSpy = expect.spyOn(MapMock, 'addSource');
       const data = point(locations['seattle']);
-      const geoJSONSource = new Mapbox.GeoJSONSource({ data });
+      const geoJSONSource = {
+        type: 'geojson',
+        data,
+      };
       mount(
-        <SourceComponent name="test" data={data} />, ContextMap
+        <SourceComponent name="test" data={data} />, context
       );
       expect(addSourceSpy).toHaveBeenCalledWith('test', geoJSONSource);
     });
 
-    it('should update state with source', function () {
+    it('should update state with status', function () {
       const data = point(locations['seattle']);
       const sourceWrapper = mount(
         <SourceComponent name="test" data={data} />,
-        ContextMap
+        context
       );
-      expect(sourceWrapper.state('source')).toExist();
+      expect(sourceWrapper.state('added')).toBe(true);
     });
 
     it('should use data if it is a string as a url for source', function () {
       const addSourceSpy = expect.spyOn(MapMock, 'addSource');
       const data = 'https://test.source.json';
-      const geoJSONSource = new Mapbox.GeoJSONSource({ data });
+      const geoJSONSource = {
+        type: 'geojson',
+        data,
+      };
       mount(
-        <SourceComponent name="test" data={data} />, ContextMap
+        <SourceComponent name="test" data={data} />, context
       );
       expect(addSourceSpy).toHaveBeenCalledWith('test', geoJSONSource);
     });
@@ -99,7 +104,7 @@ describe('<Source/>', function () {
         <SourceComponent name="test" data={null}>
           <div className="source-child" />
         </SourceComponent>),
-        ContextMap
+        context
       );
       expect(sourceWrapper.find('.source-child').length).toBe(0);
     });
@@ -109,9 +114,9 @@ describe('<Source/>', function () {
         <SourceComponent name="test">
           <div className="source-child" />
         </SourceComponent>),
-        ContextMap
+        context
       );
-      sourceWrapper.setState({ source: { type: 'invalid' } });
+      sourceWrapper.setState({ added: true });
       expect(sourceWrapper.render().children().length).toBe(1);
     });
 
@@ -121,7 +126,7 @@ describe('<Source/>', function () {
           <div id="source-child-1" />
           <div id="source-child-2" />
         </SourceComponent>),
-        ContextMap
+        context
       );
       expect(sourceWrapper.render().find('[data-mapbox-layer-group=true]').length).toBe(1);
     });
@@ -131,13 +136,10 @@ describe('<Source/>', function () {
     it('should update source from data props', function () {
       const sourceWrapper = mount(
         <SourceComponent name="test" data={point(locations['seattle'])} />,
-        ContextMap
+        context
       );
-      sourceWrapper.setProps({
-        data: point(locations['seattle']),
-      });
-      const source = sourceWrapper.state('source');
-      const setDataSpy = expect.spyOn(source, 'setData');
+      const map = sourceWrapper.context('map');
+      const setDataSpy = expect.spyOn(map, 'getSource').andCallThrough();
       sourceWrapper.setProps({
         data: point(locations['ballard']),
       });
@@ -152,7 +154,7 @@ describe('<Source/>', function () {
       const removeSourceSpy = expect.spyOn(MapMock, 'removeSource');
       const sourceWrapper = mount(
         <SourceComponent name="test" data={point(locations['seattle'])} />,
-        ContextMap
+        context
       );
       sourceWrapper.unmount();
       expect(removeSourceSpy).toHaveBeenCalled();

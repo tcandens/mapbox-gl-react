@@ -89,15 +89,18 @@ describe('<Map/>', function () {
     it('should transition map to new center', function () {
       // Spy on Mapbox method used to transition center of camera,
       // Could change later, e.g. 'jumpTo', 'panTo', etc...
-      const moveMethod = 'flyTo';
-      const flyToSpy = expect.spyOn(MapMock, moveMethod);
+      const moveToMethod = 'flyTo';
+      const moveSpy = expect.spyOn(MapMock, moveToMethod);
       const mapWrapper = mount(
         <TestMap
+          options={{
+            moveToMethod,
+          }}
           center={locations['seattle']}
         />
       );
       mapWrapper.setProps({ center: locations['ballard'] });
-      expect(flyToSpy).toHaveBeenCalled();
+      expect(moveSpy).toHaveBeenCalled();
     });
     it('should add loaded state on map#load and render children', function (done) {
       // might need a timeout greater than 2000ms

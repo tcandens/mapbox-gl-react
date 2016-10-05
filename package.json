@@ -88,7 +88,7 @@
     "lodash.isobject": "^3.0.2",
     "lodash.isstring": "^4.0.1",
     "lodash.uniqueid": "^4.0.1",
-    "mapbox-gl": "^0.20.1",
+    "mapbox-gl": "^0.25.1",
     "react-hot-loader": "^3.0.0-beta.2",
     "turf-featurecollection": "^1.0.1",
     "turf-point": "^2.0.1"

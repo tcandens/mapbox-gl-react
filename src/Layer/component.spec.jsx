@@ -7,28 +7,21 @@
   react/prop-types: "off",
   react/no-multi-comp: "off",
 */
-import React, { Component } from 'react';
+import React from 'react';
 import LayerComponent from './component';
 import { mount } from 'enzyme';
 import expect from 'expect';
-import point from 'turf-point';
-import Mapbox from 'mapbox-gl/dist/mapbox-gl';
 import MapboxMock from 'mapbox-gl-js-mock';
 
 describe('<Layer/>', function () {
   let MapMock;
-  let SourceMock;
   let context;
   beforeEach('Setup', function () {
     MapMock = new MapboxMock.Map({});
-    SourceMock = new Mapbox.GeoJSONSource({
-      data: point([0, 0]),
-    });
     context = {
       context: {
         map: MapMock,
-        source: SourceMock,
-        name: 'test',
+        sourceName: 'test',
       },
     };
   });
@@ -41,9 +34,8 @@ describe('<Layer/>', function () {
             type="circle"
           />, {
             context: {
-              map: null,
-              source: SourceMock,
-              name: 'test',
+              map: undefined,
+              sourceName: undefined,
             },
           }
         );
